@@ -5,10 +5,14 @@
 
 .allTop-container {
   background-color: rgb(109, 59, 1);
-  height: 100px;
+  height: 110px;
+  width: 100%;
   display: flex;
   justify-content: center; /* 가로 중앙 */
   align-items: center;
+  position: fixed;
+  z-index: 10;
+  position: relative;
 }
 
 .allTop-container button {
@@ -52,12 +56,122 @@
 }
 
 #textBrand {
-  position: absolute;
-  top: 38%;
-  left: 45%;
   color: white;
-  font-size: 55px;
+  font-size: 50px;
   font-weight: 700;
   text-decoration: underline;
-
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
 }
+
+.firsrBrand-img {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#fisrtBrand-image1 {
+  height: 660px;
+  width: 100%;
+}
+
+.midBar {
+  display: flex;
+  align-items: center; /* 수직 중앙 정렬 */
+  height: 50px; /* 높이 고정 */
+  padding: 0 0 0 300px;
+}
+
+.midBar > .mainmenu,
+.submenu {
+  height: 100%;
+  width: 275px;
+  border-top: none;
+  border-bottom: none;
+  border-left: none;
+  font-weight: 500;
+  color: rgb(170, 169, 169);
+  font-size: 18px;
+}
+
+.midBar > #homeBtn {
+  border: 1px solid;
+  border-top: none;
+  border-bottom: none;
+  background-color: white;
+}
+#brand-location {
+}
+
+.midImage {
+  width: 100%;
+  margin: 0;
+  height: 3200px;
+  display: flex;
+  justify-content: center;
+}
+#midMain-image {
+  position: relative;
+  top: 0;
+  height: 100%;
+  width: 80%;
+}
+
+.bottomBrand-bar {
+  gap: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.bottomBrand-bar button {
+  margin: 0;
+  padding: 0;
+  width: 370px;
+  position: relative;
+  border: none;
+  cursor: pointer;
+}
+/*
+.brand-company {
+  position: relative;
+  border: none;
+}
+
+.bottomInfo-bar {
+  background-color: black;
+  color: rgb(175, 175, 175);
+  border: none;
+  position: relative;
+  height: 380px;
+}
+
+.bib-leftTop {
+  top: 0px;
+}
+.bib-leftTop button,
+.bib-submenu {
+  width: 100px;
+  height: 30px;
+  background-color: black;
+  color: rgb(175, 175, 175);
+  border: 1px solid rgb(175, 175, 175);
+}
+.bib-rightTop {
+}
+.bib-rightTop a {
+  color: rgb(175, 175, 175);
+  text-decoration: none;
+}
+
+.bib-left {
+  position: relative;
+}
+.bottomInfo-bar {
+  position: relative;
+}
+*/
