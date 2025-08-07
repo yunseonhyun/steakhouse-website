@@ -1,8 +1,7 @@
 $(function () {
   let 현재페이지 = 0;
-  const width = 300;
+  const width = $(".first-slide").outerWidth();
   const 이미지총갯수 = $(".first-slide").length;
-}
 
   /* 
        left: -width * 현재페이지,
@@ -23,28 +22,62 @@ $(function () {
   $("#first-next").click(function () {
     // 1. 현재 페이지가 이미지 총 갯수보다 적을 떄
     if (현재페이지 < 이미지총갯수 - 1) {
-      console.log("현재페이지", 현재페이지);
-      console.log("이미지총갯수", 이미지총갯수);
       현재페이지++;
-      $(".first-wrap").animate(
-        {
-          // 이미지 교체 왼쪽으로 이미지 교체 0.5초 동안 교체할 것
-          left: -width * 현재페이지,
-        },
-        500
-      );
+    } else {
+      현재페이지 = 0;
     }
+    $(".first-wrap").animate(
+      {
+        // 이미지 교체 왼쪽으로 이미지 교체 0.5초 동안 교체할 것
+        left: -width * 현재페이지,
+      },
+      500
+    );
   });
+
   $("#first-prev").click(function () {
     // 2. 이전 페이지가 0보다 클 때
     if (현재페이지 > 0) {
       현재페이지--;
-      $(".first-wrap").animate(
-        {
-          left: -width * 현재페이지,
-        },
-        500
-      );
+    } else {
+      현재페이지 = 3;
     }
+    $(".first-wrap").animate(
+      {
+        left: -width * 현재페이지,
+      },
+      500
+    );
   });
 });
+
+$("#first-next").hover(
+  function () {
+    $("#first-nextBtn").attr(
+      "src",
+      "https://www.outback.co.kr/asset/images/util/btn_main_visual_next_on.png"
+    );
+  },
+  function () {
+    // 마우스 나갔을 때
+    $("#first-nextBtn").attr(
+      "src",
+      "https://www.outback.co.kr/asset/images/util/btn_main_visual_next_off.png"
+    );
+  }
+);
+
+$("#first-prev").hover(
+  function () {
+    $("#first-prevBtn").attr(
+      "src",
+      "https://www.outback.co.kr/asset/images/util/btn_main_visual_prev_on.png"
+    );
+  },
+  function () {
+    $("#first-prevBtn").attr(
+      "src",
+      "https://www.outback.co.kr/asset/images/util/btn_main_visual_prev_off.png"
+    );
+  }
+);

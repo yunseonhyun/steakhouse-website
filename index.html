@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>아웃백 스테이크 하우스(Outback Steakhouse)</title>
     <link rel="stylesheet" href="../steakhouse-website/css/index.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <div class="allTop-container">
@@ -30,8 +35,19 @@
     <!-- allTop-container-->
 
     <div class="first-container">
-      <button id="first-prev">이전</button>
-      <button id="first-next">다음</button>
+      <button id="first-prev">
+        <img
+          src="https://www.outback.co.kr/asset/images/util/btn_main_visual_prev_off.png"
+          id="first-prevBtn"
+        />
+      </button>
+
+      <button id="first-next">
+        <img
+          src="https://www.outback.co.kr/asset/images/util/btn_main_visual_next_off.png"
+          id="first-nextBtn"
+        />
+      </button>
       <div class="first-wrap">
         <div class="first-slide">
           <img

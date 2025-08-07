@@ -1,5 +1,6 @@
 * {
   margin: 0;
+  padding: 0;
 }
 
 .allTop-container {
@@ -52,6 +53,7 @@
 
 .first-container {
   max-width: 100%;
+  top: -100px;
   overflow: hidden; /* 화면 가로 크기를 넘어가면 숨김처림 */
   position: relative; /* 위치 기준점 설정*/
 }
@@ -63,19 +65,36 @@
 }
 
 .first-slide {
-  max-width: 100%;
+  width: 1900px;
 }
 
 .first-slide img {
-  max-width: 100%;
+  width: 100%;
   display: block;
 }
 
-.first-container button {
+#first-next {
+  position: relative;
   margin: 10px 5px;
   border: none;
   border-radius: 10px;
   font-size: 20px;
+  right: -80vw;
+  top: 50vh;
+  z-index: 10;
+  background-color: transparent;
+}
+
+#first-prev {
+  position: relative;
+  margin: 10px 5px;
+  border: none;
+  border-radius: 10px;
+  font-size: 20px;
+  left: 10vw;
+  top: 50vh;
+  z-index: 10;
+  background-color: transparent;
 }
 
 .first-container button:hover {

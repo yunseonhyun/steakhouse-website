@@ -1,0 +1,63 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.allTop-container {
+  background-color: rgb(109, 59, 1);
+  height: 100px;
+  display: flex;
+  justify-content: center; /* 가로 중앙 */
+  align-items: center;
+}
+
+.allTop-container button {
+  border: none;
+  background-color: rgb(109, 59, 1);
+  color: white;
+  padding: 13px;
+  cursor: pointer;
+}
+
+.allTop-container button.brandBtn,
+.menuBtn,
+.membershipBtn,
+.benefitBtn,
+.storeBtn {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 5px;
+}
+
+.left-con {
+  display: flex;
+  position: relative;
+  left: -40px;
+}
+
+.allTop-container button.registerBtn {
+  background-color: black;
+  padding: 6px;
+  width: 80px;
+}
+
+.mainLogo {
+  position: relative;
+  left: -130px;
+}
+
+.right-con {
+  position: relative;
+  left: 200px;
+}
+
+#textBrand {
+  position: absolute;
+  top: 38%;
+  left: 45%;
+  color: white;
+  font-size: 55px;
+  font-weight: 700;
+  text-decoration: underline;
+
+}
