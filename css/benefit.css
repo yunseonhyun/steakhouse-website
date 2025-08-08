@@ -1,0 +1,126 @@
+#textBenefit {
+  color: white;
+  font-size: 70px;
+  font-weight: 700;
+  text-decoration: underline;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+}
+
+.benefitInfo {
+  width: 100%;
+  margin-top: 70px;
+  display: flex;
+  justify-content: center;
+}
+
+.benefitInfo strong {
+  font-size: 40px;
+  font-weight: 400;
+  color: black !important;
+}
+.benefitInfo p {
+  font-size: 20px;
+  color: rgb(97, 97, 97);
+}
+.biInner {
+  width: 68%;
+}
+
+.할인서비스안내 {
+  border: 2px solid #ccc;
+  width: 100%;
+  height: 250px;
+  font-size: 19px;
+  margin-top: 40px;
+  border-color: #c7b19b;
+  background-color: #fffaf5;
+}
+
+#notice {
+  font-size: 22px !important;
+  text-align: left !important;
+  margin: 45px 0 18px 53px !important;
+  color: black !important;
+}
+
+.할인서비스안내 p {
+  margin-left: 53px;
+  margin-bottom: 2px;
+}
+
+.benefitCards {
+  width: 100%;
+  margin-top: 70px;
+  display: flex;
+  justify-content: center;
+}
+
+.benefitInner {
+  width: 68%;
+}
+
+.cardBtn {
+  display: flex;
+  gap: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.cardBtn button {
+  margin: 0;
+  padding: 0;
+  flex: 1;
+  border-top: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  border-right: none;
+  height: 90px;
+  background-color: #eee;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: white;
+}
+.cardBtn .매장별카드 {
+  border-right: 1px solid #ccc;
+}
+
+.card-1 {
+  width: 100%;
+  display: flex;
+  gap: 30px;
+  padding: 20px;
+  background-color: white;
+  margin-top: 100px;
+}
+
+.card-1 img {
+  width: 500px;
+  height: 300px;
+}
+
+.cardInfo1 {
+  margin-left: 90px;
+}
+
+.cardHref {
+  font-size: 20px;
+  margin-top: 40px;
+  width: 250px;
+  height: 40px;
+  background-color: white;
+  cursor: pointer;
+}
+#carddiscount1 {
+  font-size: 30px;
+  color: #b10a11;
+  margin-bottom: 40px;
+}
+
+#carddesc1 {
+  font-size: 20px;
+  color: rgb(97, 97, 97);
+}

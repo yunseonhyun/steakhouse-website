@@ -1,0 +1,292 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.allTop-container {
+  background-color: rgb(109, 59, 1);
+  height: 140px;
+  width: 100%;
+  display: flex;
+  justify-content: center; /* 가로 중앙 */
+  align-items: center;
+  position: fixed;
+  z-index: 10;
+  position: relative;
+}
+
+.left-con a {
+  border: none;
+  background-color: rgb(109, 59, 1);
+  color: white;
+  font-size: 25px;
+  font-weight: bold;
+  margin: 10px;
+  text-decoration: none;
+  padding: 13px;
+  cursor: pointer;
+}
+.right-con a {
+  border: none;
+  background-color: rgb(109, 59, 1);
+  color: white;
+  font-size: 17px;
+  margin: 10px;
+  text-decoration: none;
+  padding: 13px;
+  cursor: pointer;
+}
+
+.left-con {
+  display: flex;
+  position: relative;
+  left: -40px;
+}
+
+.allTop-container .right-con #registerBtn {
+  background-color: black;
+  padding: 6px 22px;
+}
+
+.mainLogo {
+  position: relative;
+  left: -130px;
+}
+
+.right-con {
+  position: relative;
+  left: 200px;
+}
+
+.firstMenu-img {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#fisrtMenu-image1 {
+  height: 830px;
+  width: 100%;
+}
+
+.midBar {
+  display: flex;
+  align-items: center; /* 수직 중앙 정렬 */
+  height: 60px; /* 높이 고정 */
+  padding: 0 0 0 300px;
+  border-bottom: 1px solid #ddd;
+}
+
+.midBar > .mainmenu,
+.submenu {
+  height: 100%;
+  width: 275px;
+  border-top: none;
+  border-bottom: none;
+  border-left: none;
+  border-color: #ddd;
+  color: rgb(170, 169, 169);
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.midBar > .submenu {
+  width: 360px !important;
+}
+
+.midBar > #homeBtn {
+  border: 1px solid;
+  border-top: none;
+  border-color: #ddd;
+  border-bottom: none;
+  background-color: white;
+}
+#brand-location {
+  margin-left: 500px;
+  padding-right: 30px;
+  font-size: 18px !important;
+  color: #444;
+  font-size: 14px;
+}
+
+.blackLabelInfo {
+  width: 100%;
+  margin-top: 70px;
+  display: flex;
+  justify-content: center;
+}
+
+.bliInner {
+  width: 68%;
+}
+#setMenu {
+  font-size: 50px;
+  font-weight: bold;
+  border-bottom: 3px solid black;
+  margin-bottom: 10px;
+  padding: 30px;
+}
+
+#bli-image {
+  display: block;
+  margin: auto;
+  width: 65%;
+  margin-top: 100px;
+}
+
+#bliEnName {
+  margin-top: 20px;
+  font-size: 22px;
+  font-weight: 500;
+  color: #94785c;
+}
+
+#bliKoName {
+  margin-top: 5px;
+  font-size: 25px;
+  font-weight: 500;
+}
+
+#bliEnName,
+#bliKoName {
+  text-align: center;
+}
+
+.setContainer {
+  display: flex;
+  justify-content: space-between; /* 양쪽 끝으로 정렬 */
+  align-items: center; /* 수직 중앙 (선택사항) */
+  width: 600px;
+  margin: 0 auto;
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+.setContainer p {
+  color: #5e5e5e;
+}
+.setContainer strong {
+  font-size: 30px;
+  margin-left: -25px;
+  color: black !important;
+}
+.나누기선 {
+  width: 1px;
+  height: 40px;
+  background-color: #ccc;
+}
+
+.blackLabelNotice {
+  border: 2px solid #ccc;
+  width: 100%;
+  height: 300px;
+  font-size: 19px;
+  margin-top: 80px;
+}
+
+.blackLabelNotice p {
+  margin-left: 53px;
+  margin-bottom: 2px;
+}
+#notice {
+  font-size: 30px !important;
+  text-align: left !important;
+  margin: 45px 0 18px 53px !important;
+}
+
+.bottomBrand-bar {
+  width: 68%;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.bbbBtns {
+  display: flex;
+  margin-top: 170px;
+  width: 100%;
+  gap: 0; /* 버튼 사이 공간 없앰 */
+  justify-content: flex-start; /* 기본값 */
+}
+
+.bottomBrand-bar button {
+  flex: 1;
+  margin: 0;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  background: none;
+}
+
+.bottomBrand-bar button img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.brand-company {
+  gap: 0;
+  width: 100%;
+  display: flex;
+  margin-top: 80px;
+  justify-content: center;
+  border-top: 1px solid rgb(231, 231, 231);
+}
+
+.bottomInfo-bar {
+  background-color: black;
+  color: rgb(175, 175, 175);
+  border: none;
+  position: relative;
+  width: 100%;
+  height: 350px;
+}
+
+.bib-leftTop {
+  padding-top: 50px;
+  padding-left: 300px;
+}
+.bib-leftTop button,
+.bib-submenu {
+  margin: 3px;
+  width: 110px;
+  height: 35px;
+  background-color: black;
+  color: rgb(175, 175, 175);
+  border: 1px solid rgb(175, 175, 175);
+}
+.bib-rightTop {
+  position: absolute;
+  top: 50px; /* 위쪽에서 20px 떨어짐 */
+  right: 200px; /* 오른쪽에서 20px 떨어짐 */
+  display: flex;
+  font-size: 15px;
+  font-weight: bold;
+}
+.bib-rightTop a {
+  color: rgb(175, 175, 175);
+  text-decoration: none;
+}
+
+.bib-left {
+  position: absolute;
+  left: 300px;
+  top: 100px;
+}
+#사업자정보확인 {
+  text-decoration: underline;
+  font-weight: bold;
+  margin: 3px;
+}
+a {
+  color: aliceblue;
+}
+.bottomInfo-bar {
+  position: relative;
+}

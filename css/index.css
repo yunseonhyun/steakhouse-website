@@ -14,10 +14,14 @@
   z-index: 10;
 }
 
-.allTop-container button {
+.allTop-container a {
   border: none;
   background-color: rgb(109, 59, 1);
   color: white;
+  font-size: 25px;
+  font-weight: bold;
+  margin: 10px;
+  text-decoration: none;
   padding: 13px;
   cursor: pointer;
 }
