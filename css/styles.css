@@ -5,7 +5,7 @@
 
 .allTop-container {
   background-color: rgb(109, 59, 1);
-  height: 140px;
+  height: 100px;
   width: 100%;
   display: flex;
   justify-content: center; /* 가로 중앙 */
@@ -19,7 +19,7 @@
   border: none;
   background-color: rgb(109, 59, 1);
   color: white;
-  font-size: 25px;
+  font-size: 18px;
   font-weight: bold;
   margin: 10px;
   text-decoration: none;
@@ -30,7 +30,7 @@
   border: none;
   background-color: rgb(109, 59, 1);
   color: white;
-  font-size: 17px;
+  font-size: 13px;
   margin: 10px;
   text-decoration: none;
   padding: 13px;
@@ -51,6 +51,7 @@
 .mainLogo {
   position: relative;
   left: -130px;
+  cursor: pointer;
 }
 
 .right-con {
@@ -58,23 +59,10 @@
   left: 200px;
 }
 
-.firstMenu-img {
-  position: relative;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-#fisrtMenu-image1 {
-  height: 830px;
-  width: 100%;
-}
-
 .midBar {
   display: flex;
   align-items: center; /* 수직 중앙 정렬 */
-  height: 60px; /* 높이 고정 */
+  height: 42px; /* 높이 고정 */
   padding: 0 0 0 300px;
   border-bottom: 1px solid #ddd;
 }
@@ -82,18 +70,19 @@
 .midBar > .mainmenu,
 .submenu {
   height: 100%;
-  width: 275px;
+  width: 210px;
   border-top: none;
   border-bottom: none;
   border-left: none;
   border-color: #ddd;
   color: rgb(170, 169, 169);
-  font-size: 20px;
+  font-size: 16px;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .midBar > .submenu {
-  width: 360px !important;
+  width: 300px !important;
 }
 
 .midBar > #homeBtn {
@@ -102,11 +91,118 @@
   border-color: #ddd;
   border-bottom: none;
   background-color: white;
+  margin-bottom: 7px;
+  height: 100%;
+  margin-left: 70px;
+  cursor: pointer;
 }
 #brand-location {
   margin-left: 500px;
   padding-right: 30px;
-  font-size: 18px !important;
+  font-size: 16px !important;
   color: #444;
   font-size: 14px;
+}
+
+.bottomBrand-bar {
+  width: 62%;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.bbbBtns {
+  display: flex;
+  margin-top: 120px;
+  width: 100%;
+  gap: 0; /* 버튼 사이 공간 없앰 */
+  justify-content: flex-start; /* 기본값 */
+}
+
+.bottomBrand-bar button {
+  flex: 1;
+  margin: 0;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  background: none;
+}
+
+.bottomBrand-bar button img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.brand-company {
+  gap: 0;
+  width: 100%;
+  display: flex;
+  margin-top: 50px;
+  justify-content: center;
+  border-top: 1px solid rgb(231, 231, 231);
+}
+
+.bottomInfo-bar {
+  background-color: black;
+  color: rgb(175, 175, 175);
+  border: none;
+  position: relative;
+  width: 100%;
+  height: 320px;
+}
+
+.bib-leftTop {
+  padding-top: 40px;
+  padding-left: 350px;
+}
+.bib-leftTop button,
+.bib-submenu {
+  margin: 3px;
+  width: 90px;
+  height: 30px;
+  background-color: black;
+  font-size: 12px;
+  color: rgb(175, 175, 175);
+  border: 1px solid rgba(177, 177, 177, 0.637);
+  cursor: pointer;
+}
+.bib-rightTop {
+  position: absolute;
+  top: 40px; /* 위쪽에서 20px 떨어짐 */
+  right: 300px; /* 오른쪽에서 20px 떨어짐 */
+  display: flex;
+  font-size: 14px;
+  font-weight: bold;
+}
+.bib-rightTop a {
+  color: rgb(175, 175, 175);
+  text-decoration: none;
+}
+.bib-submenu {
+  width: 110px;
+  padding-left: 7px;
+}
+
+.bib-left {
+  position: absolute;
+  padding-top: 20px;
+  padding-left: 350px;
+  font-size: 14px;
+  color: #ccc;
+}
+#사업자정보확인 {
+  text-decoration: underline;
+  font-weight: bold;
+  margin: 3px;
+}
+a {
+  color: aliceblue;
+}
+.bottomInfo-bar {
+  position: relative;
 }

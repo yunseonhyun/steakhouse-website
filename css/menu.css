@@ -3,61 +3,6 @@
   padding: 0;
 }
 
-.allTop-container {
-  background-color: rgb(109, 59, 1);
-  height: 140px;
-  width: 100%;
-  display: flex;
-  justify-content: center; /* 가로 중앙 */
-  align-items: center;
-  position: fixed;
-  z-index: 10;
-  position: relative;
-}
-
-.left-con a {
-  border: none;
-  background-color: rgb(109, 59, 1);
-  color: white;
-  font-size: 25px;
-  font-weight: bold;
-  margin: 10px;
-  text-decoration: none;
-  padding: 13px;
-  cursor: pointer;
-}
-.right-con a {
-  border: none;
-  background-color: rgb(109, 59, 1);
-  color: white;
-  font-size: 17px;
-  margin: 10px;
-  text-decoration: none;
-  padding: 13px;
-  cursor: pointer;
-}
-
-.left-con {
-  display: flex;
-  position: relative;
-  left: -40px;
-}
-
-.allTop-container .right-con #registerBtn {
-  background-color: black;
-  padding: 6px 22px;
-}
-
-.mainLogo {
-  position: relative;
-  left: -130px;
-}
-
-.right-con {
-  position: relative;
-  left: 200px;
-}
-
 .firstMenu-img {
   position: relative;
   width: 100%;
@@ -67,7 +12,7 @@
 }
 
 #fisrtMenu-image1 {
-  height: 830px;
+  height: 600px;
   width: 100%;
 }
 
@@ -119,12 +64,12 @@
 }
 
 .bliInner {
-  width: 68%;
+  width: 65%;
 }
 #setMenu {
-  font-size: 50px;
+  font-size: 35px;
   font-weight: bold;
-  border-bottom: 3px solid black;
+  border-bottom: 2px solid black;
   margin-bottom: 10px;
   padding: 30px;
 }
@@ -138,14 +83,14 @@
 
 #bliEnName {
   margin-top: 20px;
-  font-size: 22px;
+  font-size: 17px;
   font-weight: 500;
   color: #94785c;
 }
 
 #bliKoName {
   margin-top: 5px;
-  font-size: 25px;
+  font-size: 20px;
   font-weight: 500;
 }
 
@@ -158,17 +103,17 @@
   display: flex;
   justify-content: space-between; /* 양쪽 끝으로 정렬 */
   align-items: center; /* 수직 중앙 (선택사항) */
-  width: 600px;
+  width: 450px;
   margin: 0 auto;
-  font-size: 20px;
-  margin-top: 20px;
+  font-size: 16px;
+  margin-top: 15px;
 }
 
 .setContainer p {
   color: #5e5e5e;
 }
 .setContainer strong {
-  font-size: 30px;
+  font-size: 22px;
   margin-left: -25px;
   color: black !important;
 }
@@ -179,114 +124,23 @@
 }
 
 .blackLabelNotice {
-  border: 2px solid #ccc;
-  width: 100%;
-  height: 300px;
-  font-size: 19px;
+  border: 1px solid #dddddd;
+  width: 95%;
+  justify-content: center;
+  margin: 0 auto;
+  height: 230px;
+  font-size: 15px;
   margin-top: 80px;
 }
 
 .blackLabelNotice p {
   margin-left: 53px;
   margin-bottom: 2px;
+  color: #5f5f5f;
 }
 #notice {
-  font-size: 30px !important;
+  font-size: 20px !important;
   text-align: left !important;
-  margin: 45px 0 18px 53px !important;
-}
-
-.bottomBrand-bar {
-  width: 68%;
-  display: flex;
-  justify-content: center;
-  margin: 0 auto;
-}
-
-.bbbBtns {
-  display: flex;
-  margin-top: 170px;
-  width: 100%;
-  gap: 0; /* 버튼 사이 공간 없앰 */
-  justify-content: flex-start; /* 기본값 */
-}
-
-.bottomBrand-bar button {
-  flex: 1;
-  margin: 0;
-  padding: 0;
-  border: none;
-  cursor: pointer;
-  background: none;
-}
-
-.bottomBrand-bar button img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  margin: 0;
-  padding: 0;
-  border: none;
-}
-
-.brand-company {
-  gap: 0;
-  width: 100%;
-  display: flex;
-  margin-top: 80px;
-  justify-content: center;
-  border-top: 1px solid rgb(231, 231, 231);
-}
-
-.bottomInfo-bar {
-  background-color: black;
-  color: rgb(175, 175, 175);
-  border: none;
-  position: relative;
-  width: 100%;
-  height: 350px;
-}
-
-.bib-leftTop {
-  padding-top: 50px;
-  padding-left: 300px;
-}
-.bib-leftTop button,
-.bib-submenu {
-  margin: 3px;
-  width: 110px;
-  height: 35px;
-  background-color: black;
-  color: rgb(175, 175, 175);
-  border: 1px solid rgb(175, 175, 175);
-}
-.bib-rightTop {
-  position: absolute;
-  top: 50px; /* 위쪽에서 20px 떨어짐 */
-  right: 200px; /* 오른쪽에서 20px 떨어짐 */
-  display: flex;
-  font-size: 15px;
-  font-weight: bold;
-}
-.bib-rightTop a {
-  color: rgb(175, 175, 175);
-  text-decoration: none;
-}
-
-.bib-left {
-  position: absolute;
-  left: 300px;
-  top: 100px;
-}
-#사업자정보확인 {
-  text-decoration: underline;
-  font-weight: bold;
-  margin: 3px;
-}
-a {
-  color: aliceblue;
-}
-.bottomInfo-bar {
-  position: relative;
+  margin: 35px 0 15px 50px !important;
+  color: black;
 }

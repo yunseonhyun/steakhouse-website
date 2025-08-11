@@ -1,0 +1,24 @@
+.로그인 {
+  width: 100%;
+}
+
+.loginInner {
+  width: 90%;
+  margin: 0 auto;
+}
+
+#liTOP {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+.loginInner label {
+  font-size: 14px;
+}
+
+.loginInner input {
+  width: 100%;
+  height: 40px;
+  border: 1px solid #ccc;
+}

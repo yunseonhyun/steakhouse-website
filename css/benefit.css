@@ -1,3 +1,8 @@
+html,
+body {
+  overflow-x: hidden; /* 수평 스크롤 강제 제거 */
+  max-width: 100%;
+}
 #textBenefit {
   color: white;
   font-size: 70px;
@@ -18,37 +23,36 @@
 }
 
 .benefitInfo strong {
-  font-size: 40px;
-  font-weight: 400;
+  font-size: 28px;
+  font-weight: 500;
   color: black !important;
 }
 .benefitInfo p {
-  font-size: 20px;
+  font-size: 14px;
   color: rgb(97, 97, 97);
 }
 .biInner {
-  width: 68%;
+  width: 62%;
 }
 
 .할인서비스안내 {
-  border: 2px solid #ccc;
+  border: 1px solid #ccc;
   width: 100%;
-  height: 250px;
-  font-size: 19px;
-  margin-top: 40px;
+  height: 190px;
+  margin-top: 15px;
   border-color: #c7b19b;
   background-color: #fffaf5;
 }
 
 #notice {
-  font-size: 22px !important;
+  font-size: 16px !important;
   text-align: left !important;
-  margin: 45px 0 18px 53px !important;
+  margin: 30px 0 10px 40px !important;
   color: black !important;
 }
 
 .할인서비스안내 p {
-  margin-left: 53px;
+  margin-left: 40px;
   margin-bottom: 2px;
 }
 
@@ -60,14 +64,14 @@
 }
 
 .benefitInner {
-  width: 68%;
+  width: 62%;
 }
 
 .cardBtn {
   display: flex;
   gap: 0;
   padding: 0;
-  margin: 0;
+  margin-bottom: px;
 }
 
 .cardBtn button {
@@ -78,7 +82,7 @@
   border-left: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
   border-right: none;
-  height: 90px;
+  height: 60px;
   background-color: #eee;
   font-size: 16px;
   cursor: pointer;
@@ -88,39 +92,47 @@
   border-right: 1px solid #ccc;
 }
 
-.card-1 {
+.card {
   width: 100%;
   display: flex;
   gap: 30px;
   padding: 20px;
   background-color: white;
-  margin-top: 100px;
+  margin-top: 20px;
+  border-bottom: 1px solid #ddd;
 }
 
-.card-1 img {
-  width: 500px;
-  height: 300px;
+.card img {
+  width: 330px;
+  height: 210px;
 }
 
-.cardInfo1 {
-  margin-left: 90px;
+.cardInfo {
+  margin-left: 60px;
 }
 
 .cardHref {
-  font-size: 20px;
+  font-size: 15px;
   margin-top: 40px;
-  width: 250px;
-  height: 40px;
+  width: 150px;
+  height: 30px;
   background-color: white;
   cursor: pointer;
-}
-#carddiscount1 {
-  font-size: 30px;
-  color: #b10a11;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
+  border: 1px solid rgb(175, 175, 175);
 }
 
-#carddesc1 {
+#cardname {
   font-size: 20px;
+}
+#carddiscount {
+  font-size: 20px;
+  color: #b10a11;
+  margin-top: 10px;
+  margin-bottom: 25px;
+}
+
+#carddesc {
+  font-size: 14px;
   color: rgb(97, 97, 97);
 }

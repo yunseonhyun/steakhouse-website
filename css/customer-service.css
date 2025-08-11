@@ -1,0 +1,90 @@
+html,
+body {
+  overflow-x: hidden; /* 수평 스크롤 강제 제거 */
+  max-width: 100%;
+}
+#textBenefit {
+  color: white;
+  font-size: 60px;
+  font-weight: 600;
+  text-decoration: underline;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+}
+
+.customerSound {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#고객의소리 {
+  width: 100%;
+  font-size: 14px;
+  color: #616161;
+  margin: 0 auto;
+}
+.customerSound strong {
+  font-size: 30px;
+  font-weight: 500;
+  color: black;
+}
+.csInner {
+  width: 62%;
+  margin-top: 70px;
+}
+
+.문의하기 {
+  width: 100%;
+  border: 1px solid #ccc;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 20px;
+}
+.문의하기InnerTop {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  border-bottom: 2px solid #ccc;
+}
+
+#로그인하기 {
+  width: 250px;
+  height: 45px;
+  margin: 0 auto;
+  font-size: 16px;
+  background-color: #cb0000;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#비회원문의하기 {
+  width: 250px;
+  height: 45px;
+  margin: 0 auto;
+  font-size: 16px;
+  color: white;
+  background-color: #8f8f8f;
+  border: none;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  cursor: pointer;
+}
+#notice {
+  font-size: 25px;
+  font-weight: 400;
+  margin-top: 70px;
+  margin-bottom: 30px;
+}
+
+.문의하기InnerBottom {
+  margin-top: 30px;
+  font-size: 14px;
+  color: #525252;
+  margin-bottom: 50px;
+}
