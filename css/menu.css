@@ -63,6 +63,13 @@
   justify-content: center;
 }
 
+.세트내용확인하기 {
+  position: absolute;
+  display: block;
+  bottom: 10px;
+  right: 10px;
+}
+
 .bliInner {
   width: 65%;
 }
@@ -75,6 +82,7 @@
 }
 
 #bli-image {
+  position: relative;
   display: block;
   margin: auto;
   width: 65%;

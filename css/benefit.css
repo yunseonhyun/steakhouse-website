@@ -136,3 +136,8 @@ body {
   font-size: 14px;
   color: rgb(97, 97, 97);
 }
+
+.cardBtn button.active {
+  background-color: #cc0001;
+  color: white;
+}

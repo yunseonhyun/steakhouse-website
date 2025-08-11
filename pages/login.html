@@ -9,33 +9,38 @@
   <body>
     <div class="로그인">
       <div class="loginInner">
-        <p id="liTOP">통합 회원 로그인</p>
+        <div class="loginInner-row">
+          <p id="liTOP">통합 회원 로그인</p>
+          <button id="close">X</button>
+        </div>
         <form>
           <label
-            >아이디 <br>
-            <input
-              type="text"
-              id="username"
-              placeholder="아이디 입력"
-            />
+            >아이디 <br />
+            <input type="text" id="username" placeholder="아이디 입력" />
           </label>
           <br />
           <label
-            >비밀번호 <br>
-            <input
-              type="password"
-              id="password"
-              placeholder="비밀번호 입력"
-            />
+            >비밀번호 <br />
+            <input type="password" id="password" placeholder="비밀번호 입력" />
           </label>
 
+          <div class="options-row">
+            <label class="checkbox-wrap">
+              <input type="checkbox" />
+              아이디 저장
+            </label>
+            <a href="#">기존 아웃백 회원이세요?</a>
+          </div>
           <div class="button-group">
-            <button id="로그인기능">로그인하기</button>
-            <button id="아이디찾기">아이디 찾기</button>
-            <button id="비밀번호찾기">비밀번호 찾기</button>
+            <button id="로그인기능">로그인</button>
+            <div class="find-buttons">
+              <button id="아이디찾기">아이디 찾기</button>
+              <button id="비밀번호찾기">비밀번호 찾기</button>
+            </div>
           </div>
         </form>
       </div>
+      <button id="통합회원가입">통합 회원 가입</button>
     </div>
   </body>
 </html>

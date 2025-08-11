@@ -3,74 +3,21 @@
   padding: 0;
 }
 
-.allTop-container {
-  background-color: rgb(109, 59, 1);
-  height: 100px;
-  width: 100%;
-  display: flex;
-  justify-content: center; /* 가로 중앙 */
-  align-items: center;
-  position: fixed;
-  z-index: 10;
-}
-
-.allTop-container a {
-  border: none;
-  background-color: rgb(109, 59, 1);
-  color: white;
-  font-size: 25px;
-  font-weight: bold;
-  margin: 10px;
-  text-decoration: none;
-  padding: 13px;
-  cursor: pointer;
-}
-
-.allTop-container button.brandBtn,
-.menuBtn,
-.membershipBtn,
-.benefitBtn,
-.storeBtn {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 5px;
-}
-
-.left-con {
-  display: flex;
-  position: relative;
-  left: -40px;
-}
-
-.allTop-container button.registerBtn {
-  background-color: black;
-  padding: 6px;
-  width: 80px;
-}
-
-.mainLogo {
-  position: relative;
-  left: -130px;
-}
-
-.right-con {
-  position: relative;
-  left: 200px;
-}
-
 .first-container {
   max-width: 100%;
-  overflow: hidden; /* 화면 가로 크기를 넘어가면 숨김처림 */
-  position: relative; /* 위치 기준점 설정*/
+  overflow: hidden; /* 가로 스크롤 숨김 */
+  position: relative;
+  width: 100vw; /* 뷰포트 너비 */
 }
 
 .first-wrap {
-  width: 99999px;
+  width: calc(1900px * 4); /* 슬라이드 4장 너비 합계 */
   position: relative;
-  display: flex;
+  /* display: flex; 제거 또는 바꿔보기 */
 }
 
 .first-slide {
+  float: left; /* float 으로 가로 정렬 */
   width: 1900px;
 }
 
@@ -106,6 +53,18 @@
 .first-container button:hover {
   background-color: #333;
   color: white;
+}
+
+.second-container {
+  width: 100%;
+  margin-top: 140px;
+}
+
+.secondInner {
+  margin-top: 140px;
+  width: 70%;
+  margin: 0 auto;
+  border: 2px solid black;
 }
 
 .third-container {
