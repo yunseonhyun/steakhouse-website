@@ -9,7 +9,7 @@
   font-weight: 700;
   text-decoration: underline;
   position: absolute;
-  top: 45%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 3;
@@ -24,7 +24,7 @@
 }
 
 #fisrtBrand-image1 {
-  height: 600px;
+  height: 700px;
   width: 100%;
 }
 

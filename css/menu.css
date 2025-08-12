@@ -11,8 +11,8 @@
   box-sizing: border-box;
 }
 
-#fisrtMenu-image1 {
-  height: 600px;
+#firstMenu-image1 {
+  height: 700px;
   width: 100%;
 }
 
@@ -63,15 +63,8 @@
   justify-content: center;
 }
 
-.세트내용확인하기 {
-  position: absolute;
-  display: block;
-  bottom: 10px;
-  right: 10px;
-}
-
 .bliInner {
-  width: 65%;
+  width: 63%;
 }
 #setMenu {
   font-size: 35px;
@@ -81,12 +74,36 @@
   padding: 30px;
 }
 
-#bli-image {
+/* 이미지 감싸는 부모에 포지션 설정 */
+.setMenuBtn {
   position: relative;
   display: block;
-  margin: auto;
-  width: 65%;
-  margin-top: 100px;
+  width: 65%; /* 이미지 크기와 동일하게 유지 */
+  margin: 100px auto 0 auto; /* 기존 margin-top: 100px 유지 */
+  cursor: pointer;
+}
+
+/* 이미지 자체는 부모의 100%를 채우도록 */
+#bli-image {
+  width: 100%;
+  display: block;
+}
+
+/* 버튼을 이미지 내부 우측 하단에 고정 */
+.세트내용확인하기 {
+  position: absolute;
+  bottom: 24px;
+  right: 25px;
+  background-color: #cb0000;
+  color: white;
+  border: none;
+  width: 250px;
+  height: 56px;
+  border-radius: 50px;
+  padding: 6px 12px;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 2;
 }
 
 #bliEnName {
@@ -151,4 +168,163 @@
   text-align: left !important;
   margin: 35px 0 15px 50px !important;
   color: black;
+}
+
+/*================================== beverages-alcohol ===============================*/
+
+.menu-items-container.category-beverages-alcohol.sub {
+  width: 100%;
+  margin: 0 auto;
+  border-top: 2px solid black;
+  flex: 0 0 calc(50% - 10px); /* 가로 공간 50% - 간격 절반 */
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap; /* 줄 바꿈 허용 */
+}
+
+.menu-items-container.category-beverages-alcohol.sub .menu-item {
+  box-sizing: border-box;
+  width: 50%; /* 두 개씩 가로 정렬 */
+  padding: 10px;
+  flex: 0 0 calc(50% - 10px); /* 가로 너비: 전체의 절반 - 간격 절반 */
+  border-bottom: 1px solid black;
+
+  /* 추가: flex 컨테이너로 좌우 배치 */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-items-container.category-beverages-alcohol.sub
+  .menu-item:nth-last-child(-n + 2) {
+  border-bottom: none;
+}
+
+.menu-items-container.category-beverages-alcohol.sub .item-name {
+  font-size: 22px;
+  display: flex;
+
+  /* 추가: 세로 정렬(한글-영어)로 변경 */
+  flex-direction: column;
+  justify-content: center;
+  font-weight: 500;
+  gap: 4px;
+  margin: 50px 40px;
+}
+
+.menu-items-container.category-beverages-alcohol.sub .en-name {
+  font-size: 16px;
+  color: #a80000;
+  font-weight: 400;
+}
+
+.menu-items-container.category-beverages-alcohol.sub .item-price {
+  /* 추가: 가격 우측 정렬 */
+  font-weight: bold;
+  white-space: nowrap;
+  min-width: 70px;
+  text-align: right;
+  font-size: 28px;
+  margin-right: 20px;
+}
+
+.menu-items-container.category-beverages-alcohol.sub .ml-small {
+  font-size: 14px; /* 작게 */
+  vertical-align: middle; /* 필요하면 위치 조정 */
+  margin-right: 4px; /* 숫자+ml 오른쪽 간격 */
+  display: inline-block;
+  transform: translateX(-2px);
+}
+
+h3 {
+  width: 100%;
+  margin: 0 auto;
+  font-size: 33px;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+/*================================== beverages-alcohol ===============================*/
+
+h2 {
+  font-size: 33px;
+  padding-bottom: 30px;
+  margin-bottom: 60px;
+  border-bottom: 2px solid black;
+}
+
+.menu-items-container.category-appetizers-salads {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: flex-start;
+  width: 100%; /* 부모 너비 정확히 지정 */
+  box-sizing: border-box;
+}
+
+.menu-items-container.category-appetizers-salads .menu-item {
+  width: calc((100% - 48px) / 3); /* 3개씩 정렬 (간격 24px * 2) */
+  box-sizing: border-box;
+  padding: 10px;
+  text-align: center;
+}
+
+/* 이미지 정사각형 + 꽉 채우기 */
+.category-appetizers-salads img {
+  width: 100%;
+  aspect-ratio: 1 / 1; /* 정사각형 */
+  object-fit: cover;
+}
+
+.category-appetizers-salads .item-name {
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 7px;
+}
+
+.category-appetizers-salads .item-price {
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 7px;
+}
+
+.appetiNotice {
+  border: 1px solid #dedede;
+  display: none;
+  width: 61%;
+  height: 130px;
+  margin: 0 auto;
+  margin-top: 30px;
+  text-align: left;
+  padding: 10px;
+}
+
+.appetiNotice #name {
+  font-size: 20px;
+  padding: 25px 0 0 25px;
+}
+
+.appetiNotice #desc {
+  font-size: 14px;
+  padding: 15px 0 0 25px;
+}
+
+/*================================== blacklabel ===============================*/
+.blackLabelInfo .item-name {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* 가로 중앙 정렬 */
+  justify-content: center; /* 세로 가운데 정렬 (부모가 높이를 가지고 있을 때 유효) */
+  text-align: center;
+  flex-direction: column-reverse; /* 순서 뒤집기 */
+  font-size: 20px;
+  font-weight: 500;
+}
+.blackLabelInfo img {
+  display: block;
+  margin: 0 auto;
+}
+.blackLabelInfo .item-name > .en-name {
+  font-size: 16px;
+  color: #94785c;
 }

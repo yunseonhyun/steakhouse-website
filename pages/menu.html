@@ -6,6 +6,7 @@
     <title>BLACK LABEL CHEF EDITION | 메뉴 | 아웃백</title>
     <link rel="stylesheet" href="../css/menu.css" />
     <link rel="stylesheet" href="../css/styles.css" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   </head>
   <body>
     <div class="allTop-container">
@@ -24,10 +25,10 @@
         <a href="#">STORE</a>
       </div>
       <div class="right-con">
-        <a href="requestBtn">고객의 소리</a>
+        <a href="../pages/customer-service.html">고객의 소리</a>
         <a href="recruitmentBtn">채용</a>
-        <a href="loginBtn">로그인</a>
-        <a href="registerBtn" id="registerBtn">회원가입</a>
+        <a href="#" id="loginBtn">로그인</a>
+        <a href="#" id="registerBtn">회원가입</a>
       </div>
     </div>
     <div class="firstMenu-img">
@@ -56,29 +57,24 @@
       </select>
 
       <select class="submenu">
-        <option class="subList">&nbsp;&nbsp;&nbsp;BEVERAGES&ALCOHOL</option>
-        <option class="subList">&nbsp;&nbsp;&nbsp;APPETIZERS & SALADS</option>
-        <option class="subList">
-          &nbsp;&nbsp;&nbsp;SIZZLING BONE-IN STEAK
-        </option>
-        <option class="subList" selected>
-          &nbsp;&nbsp;&nbsp;BLACK LABEL CHEF EDITION
-        </option>
-        <option class="subList">
-          &nbsp;&nbsp;&nbsp;SPECIAL STEAKS & BACK RIBS
-        </option>
-        <option class="subList">&nbsp;&nbsp;&nbsp;SIDES & ADD ON MATES</option>
-        <option class="subList">&nbsp;&nbsp;&nbsp;PASTA & REICE</option>
-        <option class="subList">&nbsp;&nbsp;&nbsp;DESSERT</option>
-        <option class="subList">&nbsp;&nbsp;&nbsp;WINES</option>
-        <option class="subList">&nbsp;&nbsp;&nbsp;LUNCH SET</option>
+        <option class="subList">BEVERAGES & ALCOHOL</option>
+        <option class="subList">APPETIZERS & SALADS</option>
+        <option class="subList">SIZZLING BONE-IN STEAK</option>
+        <option class="subList" selected>BLACK LABEL CHEF EDITION</option>
+        <option class="subList">SPECIAL STEAKS & BACK RIBS</option>
+        <option class="subList">SIDES & ADD ON MATES</option>
+        <option class="subList">PASTA & RICE</option>
+        <option class="subList">DESSERTS</option>
+        <option class="subList">WINES</option>
+        <option class="subList">LUNCH SET</option>
       </select>
-
+      <div id="navButtons" style="display: none"></div>
+      <nav id="main-menu-nav" style="display: none"></nav>
       <span id="brand-location">Home > BRAND > BRAND </span>
     </div>
 
     <div class="blackLabelInfo">
-      <div class="bliInner">
+      <div class="bliInner" id="menu-content-area">
         <p id="setMenu">SET MENU</p>
         <label class="setMenuBtn">
           <img
@@ -108,6 +104,13 @@
           <p>- 시즌에 따라 블랙라벨 스테이크의 가니시는 변경될 수 있습니다.</p>
           <p>- 일부 매장의 경우 가격이 상이할 수 있습니다.</p>
         </div>
+      </div>
+    </div>
+
+    <div class="appetiNotice" style="display: none">
+      <div class="aNInner">
+        <p id="name">NOTICE</p>
+        <p id="desc">- 일부 매장의 경우 가격이 상이할 수 있습니다.</p>
       </div>
     </div>
 
@@ -175,5 +178,7 @@
         <span>대표번호 <strong>1577-0500</strong></span>
       </div>
     </div>
+    <script src="../js/menu.js"></script>
+    <script src="../pages/js/menus.js"></script>
   </body>
 </html>
