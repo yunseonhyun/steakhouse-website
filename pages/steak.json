@@ -53,6 +53,7 @@
       }
     ]
   },
+
   "APPETIZERS & SALADS": [
     {
       "imageUrl": "https://www.outback.co.kr/upload/product/20240714/20240714212534617277.jpg",
@@ -103,6 +104,7 @@
             { "type": "커플 세트", "price": 137000 },
             { "type": "패밀리 세트", "price": 189000 }
           ],
+
           "description": {
             "summary": "육해공을 모두 담은 기간 한정 스페셜 디쉬와 보는 즐거움이 가득한 공룡알 디저트까지",
             "ingredients": [

@@ -2,6 +2,10 @@
   margin: 0;
   padding: 0;
 }
+body {
+  overflow-x: hidden; /* 수평 스크롤 강제 제거 */
+  max-width: 100%;
+}
 
 .firstMenu-img {
   position: relative;
@@ -35,6 +39,7 @@
   color: rgb(170, 169, 169);
   font-size: 20px;
   font-weight: bold;
+  margin-left: 10px;
 }
 
 .midBar > .submenu {
@@ -244,13 +249,16 @@ h3 {
   font-weight: 600;
 }
 
-/*================================== beverages-alcohol ===============================*/
+/*================================== appetizers-salads ===============================*/
 
 h2 {
   font-size: 33px;
   padding-bottom: 30px;
-  margin-bottom: 60px;
   border-bottom: 2px solid black;
+}
+
+h2.category-appetizers-salads {
+  display: block !important;
 }
 
 .menu-items-container.category-appetizers-salads {
@@ -283,9 +291,10 @@ h2 {
 }
 
 .category-appetizers-salads .item-price {
-  font-size: 20px;
+  font-size: 20px !important;
   font-weight: 600;
-  margin-top: 7px;
+  display: inline-flex !important; /* inline-flex로 변경 */
+  justify-content: center !important;
 }
 
 .appetiNotice {
@@ -310,6 +319,9 @@ h2 {
 }
 
 /*================================== blacklabel ===============================*/
+.bliInner h2 {
+  display: none;
+}
 .blackLabelInfo .item-name {
   display: flex;
   flex-direction: column;
@@ -319,12 +331,62 @@ h2 {
   flex-direction: column-reverse; /* 순서 뒤집기 */
   font-size: 20px;
   font-weight: 500;
+
+  margin-bottom: 20px;
 }
 .blackLabelInfo img {
   display: block;
   margin: 0 auto;
+  margin-top: 60px;
+}
+.bliInner h3 {
+  margin-bottom: 30px;
+}
+.menu-item.category-black-label-chef-edition {
+  border-top: 2px solid black;
 }
 .blackLabelInfo .item-name > .en-name {
   font-size: 16px;
   color: #94785c;
+}
+
+.blackLabelInfo .item-price {
+  text-align: center;
+  font-size: 35px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.blackLabelInfo .price-part {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.blackLabelInfo .item-description {
+  display: none;
+}
+
+.blackLabelNotice {
+  border: 1px solid #dedede;
+  display: none;
+  width: 61%;
+  height: 200px;
+  margin: 0 auto;
+  margin-top: 50px;
+  text-align: left;
+  padding: 10px;
+}
+
+.blackLabelNotice #name {
+  font-size: 20px;
+  padding: 25px 0 10px 0;
+  margin-left: 30px;
+  font-weight: 500;
+}
+
+.blackLabelNotice #desc {
+  font-size: 14px;
+  padding: 1px 0 0 0;
+  margin-left: 30px;
 }

@@ -34,11 +34,9 @@ function displayMenu(allData, categoryName) {
 
   contentElement.empty();
 
-  // 카테고리 고유 클래스 생성
   const categoryClass = categoryName.toLowerCase().replace(/[^a-z0-9]+/g, "-");
 
   if (categoryName !== "BEVERAGES & ALCOHOL") {
-    // h2에 클래스 추가
     const title = $("<h2></h2>")
       .text(categoryName)
       .addClass(`category-${categoryClass}`);
@@ -66,7 +64,6 @@ function displayMenu(allData, categoryName) {
       }
     }
   } else if (categoryName === "BEVERAGES & ALCOHOL") {
-    // 여기서 subContainer에 category-beverages-alcohol 클래스 추가
     for (const subCategoryName in categoryData) {
       const subTitle = $("<h3></h3>").text(subCategoryName);
       const subContainer = $(
@@ -113,13 +110,72 @@ function displayMenu(allData, categoryName) {
     }
   }
 
+  // --- 수정된 부분 시작 ---
   $(".item-price").each(function () {
     const html = $(this).html();
-    const newHtml = html
-      .replace(/(\d+ml)/g, '<span class="ml-small">$1</span>')
-      .replace(/ \/ /g, " <br> ");
-    $(this).html(newHtml);
+
+    // 가격 문자열 '/' 구분 기준으로 나누기
+    const parts = html.split(" / ");
+    if (parts.length === 2) {
+      // 메뉴 이름 텍스트 가져오기
+      const menuName = $(this)
+        .closest(".menu-item")
+        .find(".item-name")
+        .text()
+        .trim();
+
+      // '테라' 또는 '하이네켄' 이름 포함 시 세로선 제외
+      const excludeSeparator =
+        menuName.includes("테라") || menuName.includes("하이네켄");
+
+      const firstPart = `<div class="price-part">${parts[0].trim()}</div>`;
+      const secondPart = `<div class="price-part">${parts[1].trim()}</div>`;
+      $(this).html(firstPart + secondPart);
+      $(this).css({
+        display: "flex",
+        "justify-content": "space-between",
+        "align-items": "center",
+        "max-width": "320px",
+        margin: "0 auto",
+        "font-size": "15px",
+        "border-left": "1px solid transparent",
+      });
+
+      $(this).css("position", "relative");
+
+      if (!excludeSeparator) {
+        if (!$(this).find(".separator").length) {
+          $("<span class='separator'></span>")
+            .css({
+              position: "absolute",
+              top: "10%",
+              bottom: "10%",
+              left: "50%",
+              width: "1px",
+              "background-color": "#999",
+              transform: "translateX(-50%)",
+              "z-index": "1",
+            })
+            .appendTo($(this));
+        }
+      }
+
+      $(this).children(".price-part").css({
+        display: "flex",
+        "flex-direction": "column",
+        "align-items": "center",
+        width: "48%",
+        "z-index": "2",
+      });
+    } else {
+      // 기존 처리 유지
+      const newHtml = html
+        .replace(/(\d+ml)/g, '<span class="ml-small">$1</span>')
+        .replace(/ \/ /g, " <br> ");
+      $(this).html(newHtml);
+    }
   });
+  // --- 수정된 부분 끝 ---
 }
 
 function createMenuItemElement(item, categoryName) {
@@ -184,11 +240,17 @@ function formatName(item) {
 
 function formatPrice(item) {
   if (item.price) {
-    return `${item.price.toLocaleString()}`;
+    return `${item.price.toLocaleString()}원`;
   }
   if (item.prices) {
     return item.prices
-      .map((p) => `${p.type || p.size} ${p.price.toLocaleString()}원`)
+      .map(
+        (p) =>
+          `${(p.type || p.size).replace(
+            /\n/g,
+            "<br>"
+          )}<br>${p.price.toLocaleString()}원`
+      )
       .join(" / ");
   }
   if (item.price_per_100g) {
@@ -239,4 +301,56 @@ $(".submenu").on("change", function () {
   } else {
     console.warn("해당하는 버튼이 없습니다:", selectedText);
   }
+});
+
+$(".submenu").on("change", function () {
+  const selectedText = $(this).find("option:selected").text().trim();
+
+  const $btn = $("#main-menu-nav button").filter(function () {
+    return $(this).text().trim() === selectedText;
+  });
+
+  if ($btn.length) {
+    $btn.first().click();
+  } else {
+    console.warn("해당하는 버튼이 없습니다:", selectedText);
+  }
+
+  // appetiNotice 보여주기/숨기기 제어
+  if (selectedText === "APPETIZERS & SALADS") {
+    $(".appetiNotice").show();
+  } else {
+    $(".appetiNotice").hide();
+  }
+
+  if (selectedText === "BLACK LABEL CHEF EDITION") {
+    $(".blackLabelNotice").show();
+  } else {
+    $(".blackLabelNotice").hide();
+  }
+});
+
+$(".submenu").on("change", function () {
+  const selectedText = $(this).find("option:selected").text().trim();
+
+  const $btn = $("#main-menu-nav button").filter(function () {
+    return $(this).text().trim() === selectedText;
+  });
+
+  if ($btn.length) {
+    $btn.first().click();
+  } else {
+    console.warn("해당하는 버튼이 없습니다:", selectedText);
+  }
+
+  if (selectedText === "BLACK LABEL CHEF EDITION") {
+    $(".blackLabelNotice").show();
+  } else {
+    $(".blackLabelNotice").hide();
+  }
+});
+
+$(function () {
+  // 기존 초기 로딩 부분 끝난 직후에 바로 추가
+  $(".blackLabelNotice").show();
 });

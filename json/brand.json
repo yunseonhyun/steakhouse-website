@@ -1,0 +1,35 @@
+{
+  "OUTBACK STORY": [
+    {
+      "url": "../images/banners/brand10.png"
+    },
+    {
+      "url": "../images/banners/brand11.png"
+    }
+  ],
+  "BEEF STORY": [
+    {
+      "url": "https://www.outback.co.kr/asset/images/content/beef_story_visual_01.png"
+    },
+    {
+      "url": "https://www.outback.co.kr/asset/images/content/beef_story_visual_03.jpg"
+    }
+  ],
+  "STEAK ACADEMY": [
+    {
+      "url": "https://www.outback.co.kr/asset/images/content/steak_academy_visual.jpg"
+    },
+    {
+      "url": "../images/banners/brand2.png"
+    },
+    {
+      "url": "https://www.outback.co.kr/asset/images/content/steak_academy_bottom_visual.jpg"
+    },
+    {
+      "youtube": "https://www.youtube.com/embed/pDCtju9tEhk?si=pxbDkI3wffzmykrz"
+    },
+    {
+      "youtube": "https://www.youtube.com/embed/d5ndpKXuo3Y?si=XA9AikvQRBSNN0wi"
+    }
+  ]
+}
