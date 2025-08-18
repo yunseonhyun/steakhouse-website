@@ -20,41 +20,43 @@ document.getElementById("savePoint").addEventListener("click", function () {
   const result = confirm(
     "로그인이 필요한 서비스 입니다. \n로그인 페이지로 이동하시겠습니까?"
   );
-
   if (result) {
     window.open("login.html", "_blank", "width=720,height=1000");
   }
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-  const submenu = document.querySelector(".submenu");
+  const mainMenu = document.querySelector(".mainmenu");
+  const subMenu = document.querySelector(".submenu");
+  const brandLocation = document.getElementById("brand-location");
   const container = document.getElementById("midImage");
 
+  // 기본 위치 텍스트 초기 설정
+  brandLocation.textContent = "Home > BRAND > BRAND";
+
+  let previousMainIndex = mainMenu.selectedIndex;
+
+  // 브랜드 이미지 및 유튜브 업데이트 함수 (기존 fetch brand.json 코드)
   fetch("../json/brand.json")
     .then((res) => res.json())
     .then((data) => {
       function updateImages() {
-        const selected = submenu.value.trim();
+        const selected = subMenu.value.trim();
         container.innerHTML = "";
 
         if (data[selected]) {
           const items = data[selected];
           items.forEach((item) => {
-            // 이미지 처리
             if (item.url) {
               const img = document.createElement("img");
               img.src = item.url;
               img.alt = `${selected} 이미지`;
               img.classList.add("brand-image");
-
               if (selected === "STEAK ACADEMY") {
                 img.classList.add("steak-academy-image");
               }
-
               container.appendChild(img);
             }
-
-            // 유튜브 영상 처리
             if (item.youtube) {
               const iframe = document.createElement("iframe");
               iframe.src = item.youtube;
@@ -73,8 +75,68 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       }
 
+      // 초기 이미지 로딩
       updateImages();
-      submenu.addEventListener("change", updateImages);
+
+      subMenu.addEventListener("change", function () {
+        updateImages();
+        updateBrandLocation();
+      });
+
+      // 브랜드 위치 업데이트 함수
+      function updateBrandLocation(forceDefault = false) {
+        const mainText =
+          mainMenu.options[mainMenu.selectedIndex].textContent.trim();
+        const subText =
+          subMenu.options[subMenu.selectedIndex]?.textContent.trim();
+
+        if (
+          forceDefault ||
+          (mainText === "BENEFIT" &&
+            (subMenu.selectedIndex === 0 || subMenu.selectedIndex === -1)) ||
+          (mainText === "BRAND" &&
+            (subMenu.selectedIndex === 0 || subMenu.selectedIndex === -1))
+        ) {
+          brandLocation.textContent = `Home > ${mainText} > ${mainText}`;
+        } else if (mainText === subText || !subText || subText === "") {
+          brandLocation.textContent = `Home > ${mainText}`;
+        } else {
+          brandLocation.textContent = `Home > ${mainText} > ${subText}`;
+        }
+      }
+
+      // mainMenu 클릭 시 다시 같은 메뉴 누르면 기본 경로로 초기화
+      mainMenu.addEventListener("click", () => {
+        const currentIndex = mainMenu.selectedIndex;
+        const currentText = mainMenu.options[currentIndex].textContent.trim();
+
+        if (
+          (currentText === "BENEFIT" || currentText === "BRAND") &&
+          currentIndex === previousMainIndex
+        ) {
+          subMenu.selectedIndex = 0;
+          updateBrandLocation(true);
+          updateImages();
+        }
+
+        previousMainIndex = currentIndex;
+      });
+
+      mainMenu.addEventListener("change", () => {
+        updateBrandLocation();
+        // 선택된 값이 '#'이 아니면 페이지 이동 (예: brand.html, menu.html)
+        const selectedValue = mainMenu.value;
+        if (selectedValue && selectedValue !== "#") {
+          if (selectedValue === "benefit" || selectedValue === "brand") {
+            // benefit 또는 brand 선택 시 기본 경로 유지, 페이지 이동 안함
+            subMenu.selectedIndex = 0;
+            updateBrandLocation(true);
+            updateImages();
+          } else {
+            window.location.href = selectedValue + ".html";
+          }
+        }
+      });
     })
     .catch((err) => {
       console.error("JSON 불러오기 실패:", err);

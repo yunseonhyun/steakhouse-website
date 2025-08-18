@@ -55,18 +55,76 @@
   color: white;
 }
 
-.second-container {
-  width: 100%;
+.secondInner {
+  width: 65%;
+  margin: 0 auto;
   margin-top: 140px;
 }
 
-.secondInner {
-  margin-top: 140px;
-  width: 70%;
-  margin: 0 auto;
-  border: 2px solid black;
+.slide-page {
+  display: flex;
+  align-items: center; /* 세로 가운데 정렬 */
+  gap: 10px; /* 요소 간 간격 조절 */
+}
+
+.center-text {
+  width: 480px; /* 텍스트 영역 고정 너비 */
+  padding: 40px;
+  margin-left: 30px;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  z-index: 2;
+}
+button {
+  font-size: 40px;
+  border: none;
+  background-color: white;
+  color: rgb(204, 204, 204);
+  cursor: pointer;
+}
+
+.slide-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#left-img {
+  width: 300px;
+}
+#right-img {
+  margin-left: -100px;
+}
+
+#text-large {
+  font-size: 70px;
+  font-weight: 700;
+}
+#text-medium {
+  font-size: 25px;
+  font-weight: 500;
+  margin-bottom: 20px;
 }
 
 .third-container {
-  display: block;
+  width: 65%;
+  margin: 0 auto;
+}
+
+.third1-img {
+  margin-left: 200px;
+}
+
+.third2-img {
+  margin-top: -150px;
+}
+
+.forthBenefit-container {
+  width: 65%;
+  margin: 0 auto;
+  margin-top: 80px;
+}
+
+#bliClick {
+  cursor: pointer;
 }

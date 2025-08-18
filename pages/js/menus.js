@@ -11,12 +11,31 @@ $(function () {
         .on("click", function () {
           $(this).addClass("active").siblings().removeClass("active");
           displayMenu(menuData, category);
+          // 셀렉트 박스도 동기화
+          $(".submenu").val(category).trigger("change", { fromButton: true });
         });
     });
     navElement.append(menuButtons);
 
-    if (categories.length > 0) {
-      navElement.find("button").eq(2).trigger("click"); // 3번째 버튼 클릭 시도
+    // URL 파라미터 읽기
+    const urlParams = new URLSearchParams(window.location.search);
+    const submenuParam = urlParams.get("submenu");
+
+    // 파라미터 값이 있고, categories에 있을 때 직접 메뉴 표시
+    if (submenuParam && categories.includes(submenuParam)) {
+      displayMenu(menuData, submenuParam);
+      navElement
+        .find("button")
+        .filter(function () {
+          return $(this).text().trim() === submenuParam;
+        })
+        .addClass("active")
+        .siblings()
+        .removeClass("active");
+      $(".submenu").val(submenuParam);
+    } else if (categories.length > 0) {
+      // 기본 3번째 버튼 표시
+      navElement.find("button").eq(2).trigger("click");
     }
   }).fail(function (error) {
     console.error("데이터 로딩 실패:", error);
@@ -110,21 +129,18 @@ function displayMenu(allData, categoryName) {
     }
   }
 
-  // --- 수정된 부분 시작 ---
+  // 가격 포맷 처리
   $(".item-price").each(function () {
     const html = $(this).html();
 
-    // 가격 문자열 '/' 구분 기준으로 나누기
     const parts = html.split(" / ");
     if (parts.length === 2) {
-      // 메뉴 이름 텍스트 가져오기
       const menuName = $(this)
         .closest(".menu-item")
         .find(".item-name")
         .text()
         .trim();
 
-      // '테라' 또는 '하이네켄' 이름 포함 시 세로선 제외
       const excludeSeparator =
         menuName.includes("테라") || menuName.includes("하이네켄");
 
@@ -168,14 +184,12 @@ function displayMenu(allData, categoryName) {
         "z-index": "2",
       });
     } else {
-      // 기존 처리 유지
       const newHtml = html
         .replace(/(\d+ml)/g, '<span class="ml-small">$1</span>')
         .replace(/ \/ /g, " <br> ");
       $(this).html(newHtml);
     }
   });
-  // --- 수정된 부분 끝 ---
 }
 
 function createMenuItemElement(item, categoryName) {
@@ -260,7 +274,13 @@ function formatPrice(item) {
 }
 
 $(function () {
-  $(".submenu").on("change", function () {
+  $(".submenu").on("change", function (event, extra) {
+    // extra.fromButton가 true면 버튼 클릭 이벤트에서 온거라 무한 루프 방지
+    if (extra && extra.fromButton) {
+      // 셀렉트 박스에서 온 이벤트는 무시
+      return;
+    }
+
     const selectedCategory = $(this).find("option:selected").text().trim();
 
     const $btn = $("#main-menu-nav button").filter(function () {
@@ -268,12 +288,26 @@ $(function () {
     });
 
     if ($btn.length) {
-      $btn.click();
+      $btn.first().click();
     } else {
       console.warn("해당하는 카테고리 버튼이 없습니다:", selectedCategory);
     }
+
+    // appetiNotice 보여주기/숨기기 제어
+    if (selectedCategory === "APPETIZERS & SALADS") {
+      $(".appetiNotice").show();
+    } else {
+      $(".appetiNotice").hide();
+    }
+
+    if (selectedCategory === "BLACK LABEL CHEF EDITION") {
+      $(".blackLabelNotice").show();
+    } else {
+      $(".blackLabelNotice").hide();
+    }
   });
 
+  // 초기 로딩시 select 박스와 버튼 상태 동기화
   const selectedCategoryOnLoad = $(".submenu")
     .find("option:selected")
     .text()
@@ -283,74 +317,11 @@ $(function () {
   });
 
   if ($btnOnLoad.length) {
-    $btnOnLoad.click();
+    $btnOnLoad.first().click();
   } else {
     console.warn("초기 로딩 시 버튼 없음:", selectedCategoryOnLoad);
   }
-});
 
-$(".submenu").on("change", function () {
-  const selectedText = $(this).find("option:selected").text().trim();
-
-  const $btn = $("#main-menu-nav button").filter(function () {
-    return $(this).text().trim() === selectedText;
-  });
-
-  if ($btn.length) {
-    $btn.first().click();
-  } else {
-    console.warn("해당하는 버튼이 없습니다:", selectedText);
-  }
-});
-
-$(".submenu").on("change", function () {
-  const selectedText = $(this).find("option:selected").text().trim();
-
-  const $btn = $("#main-menu-nav button").filter(function () {
-    return $(this).text().trim() === selectedText;
-  });
-
-  if ($btn.length) {
-    $btn.first().click();
-  } else {
-    console.warn("해당하는 버튼이 없습니다:", selectedText);
-  }
-
-  // appetiNotice 보여주기/숨기기 제어
-  if (selectedText === "APPETIZERS & SALADS") {
-    $(".appetiNotice").show();
-  } else {
-    $(".appetiNotice").hide();
-  }
-
-  if (selectedText === "BLACK LABEL CHEF EDITION") {
-    $(".blackLabelNotice").show();
-  } else {
-    $(".blackLabelNotice").hide();
-  }
-});
-
-$(".submenu").on("change", function () {
-  const selectedText = $(this).find("option:selected").text().trim();
-
-  const $btn = $("#main-menu-nav button").filter(function () {
-    return $(this).text().trim() === selectedText;
-  });
-
-  if ($btn.length) {
-    $btn.first().click();
-  } else {
-    console.warn("해당하는 버튼이 없습니다:", selectedText);
-  }
-
-  if (selectedText === "BLACK LABEL CHEF EDITION") {
-    $(".blackLabelNotice").show();
-  } else {
-    $(".blackLabelNotice").hide();
-  }
-});
-
-$(function () {
-  // 기존 초기 로딩 부분 끝난 직후에 바로 추가
+  // blackLabelNotice 기본 노출
   $(".blackLabelNotice").show();
 });

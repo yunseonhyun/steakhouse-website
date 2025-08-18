@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "texts": {
+      "large": "GARIC\nRIBEYE",
+      "medium": "갈릭 립아이",
+      "small": "구운 마늘과 마늘칩이 어우러진 꽃등심\n스테이크"
+    },
+    "image": "https://www.outback.co.kr/upload/banner/20240717/20240717154449016372.jpg"
+  },
+  {
+    "id": 2,
+    "texts": {
+      "large": "GOLD&nbsp;COAST\nCOCONUT\nSHIRIMP",
+      "medium": "골드 코스트 코코넛 쉬림프",
+      "small": "달콤하고 고소한 코코넛 가루를 묻혀\n바삭하게 튀긴 새우 요리"
+    },
+    "image": "https://www.outback.co.kr/upload/banner/20190108/20190108172841884005.jpg"
+  },
+  {
+    "id": 3,
+    "texts": {
+      "large": "BABY&nbsp;BACK\nRIPS",
+      "medium": "베이비 백 립",
+      "small": "부드러운 돼지갈비에 아웃백만의 특제 소스를\n발라 구워낸 바비큐 요리"
+    },
+    "image": "https://www.outback.co.kr/upload/banner/20180627/20180627183554751017.jpg"
+  },
+  {
+    "id": 4,
+    "texts": {
+      "large": "AUSSIE\nCHEESE\nFRIES",
+      "medium": "오지 치즈 후라이",
+      "small": "두툼한 감자튀김에 체다치즈, 잭치즈를 듬뿍\n녹여 베이컨을 뿌린 메뉴"
+    },
+    "image": "https://www.outback.co.kr/upload/banner/20180627/20180627183609110019.jpg"
+  }
+]

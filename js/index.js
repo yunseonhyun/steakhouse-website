@@ -2,53 +2,39 @@ $(function () {
   let 현재페이지 = 0;
   const width = $(".first-slide").outerWidth();
   const 이미지총갯수 = $(".first-slide").length;
+  let firstAutoSlideTimeout;
 
-  /* 
-       left: -width * 현재페이지,
-       첫 번째 이미지 (현재페이지0)
-       left: -300px * 0 = 0
-       슬라이드 위치가 0 원래 위치에 존재
-
-       두 번째 이미지 (현재페이지 = 1)
-       left: -300px * 1 = -300px
-       슬라이드 래퍼가 왼쪽으로 -300px 이동
-       
-       세 번째 이미지 (현재페이지 = 2)
-       left: -300px * 2 = -600px
-       슬라이드 래퍼가 왼쪽으로 -600px 이동
-  
-  
-  */
-  $("#first-next").click(function () {
-    // 1. 현재 페이지가 이미지 총 갯수보다 적을 떄
-    if (현재페이지 < 이미지총갯수 - 1) {
-      현재페이지++;
-    } else {
-      현재페이지 = 0;
-    }
+  function moveSlide(index) {
     $(".first-wrap").animate(
       {
-        // 이미지 교체 왼쪽으로 이미지 교체 0.5초 동안 교체할 것
-        left: -width * 현재페이지,
+        left: -width * index,
       },
       500
     );
+  }
+
+  function resetFirstAutoSlide() {
+    clearTimeout(firstAutoSlideTimeout);
+    firstAutoSlideTimeout = setTimeout(() => {
+      현재페이지 = (현재페이지 + 1) % 이미지총갯수;
+      moveSlide(현재페이지);
+      resetFirstAutoSlide();
+    }, 13000);
+  }
+
+  $("#first-next").click(function () {
+    현재페이지 = (현재페이지 + 1) % 이미지총갯수;
+    moveSlide(현재페이지);
+    resetFirstAutoSlide(); // 타이머 리셋
   });
 
   $("#first-prev").click(function () {
-    // 2. 이전 페이지가 0보다 클 때
-    if (현재페이지 > 0) {
-      현재페이지--;
-    } else {
-      현재페이지 = 3;
-    }
-    $(".first-wrap").animate(
-      {
-        left: -width * 현재페이지,
-      },
-      500
-    );
+    현재페이지 = 현재페이지 > 0 ? 현재페이지 - 1 : 이미지총갯수 - 1;
+    moveSlide(현재페이지);
+    resetFirstAutoSlide(); // 타이머 리셋
   });
+
+  resetFirstAutoSlide();
 });
 
 $("#first-next").hover(
@@ -59,7 +45,6 @@ $("#first-next").hover(
     );
   },
   function () {
-    // 마우스 나갔을 때
     $("#first-nextBtn").attr(
       "src",
       "https://www.outback.co.kr/asset/images/util/btn_main_visual_next_off.png"
@@ -97,7 +82,6 @@ document.getElementById("registerBtn").addEventListener("click", function () {
     "width=720,height=1000"
   );
 });
-
 document.getElementById("reserve").addEventListener("click", function () {
   window.open(
     "https://m.place.naver.com/place/list?query=%EC%95%84%EC%9B%83%EB%B0%B1%EC%8A%A4%ED%85%8C%EC%9D%B4%ED%81%AC%ED%95%98%EC%9A%B0%EC%8A%A4&x=126.9783880&y=37.5666100"
@@ -110,6 +94,90 @@ document.getElementById("savePoint").addEventListener("click", function () {
   );
 
   if (result) {
-    window.open("login.html", "_blank", "width=720,height=1000");
+    window.open(
+      "../steakhouse-website/pages/login.html",
+      "_blank",
+      "width=720,height=1000"
+    );
+  }
+});
+
+let slides = [];
+let currentIndex = 0;
+let autoSlideTimeout;
+
+function updateSlide(index) {
+  const leftImg = document.getElementById("left-img");
+  const rightImg = document.getElementById("right-img");
+  const textLarge = document.getElementById("text-large");
+  const textMedium = document.getElementById("text-medium");
+  const textSmall = document.getElementById("text-small");
+
+  const prevIndex = index === 0 ? slides.length - 1 : index - 1;
+
+  leftImg.src = slides[prevIndex].image;
+  leftImg.alt = slides[prevIndex].texts.large + " 이전 사진";
+
+  rightImg.src = slides[index].image;
+  rightImg.alt = slides[index].texts.large + " 현재 사진";
+
+  textLarge.innerHTML = slides[index].texts.large.replace(/\n/g, "<br>");
+  textMedium.textContent = slides[index].texts.medium;
+  textSmall.innerHTML = slides[index].texts.small.replace(/\n/g, "<br>");
+}
+
+function resetAutoSlide() {
+  if (autoSlideTimeout) clearTimeout(autoSlideTimeout);
+  autoSlideTimeout = setTimeout(() => {
+    currentIndex = (currentIndex + 1) % slides.length;
+    updateSlide(currentIndex);
+    resetAutoSlide();
+  }, 3000);
+}
+
+function fetchSlides() {
+  fetch("json/index.json")
+    .then((response) => {
+      if (!response.ok) throw new Error("JSON 불러오기 실패");
+      return response.json();
+    })
+    .then((data) => {
+      slides = data;
+      updateSlide(currentIndex);
+      resetAutoSlide();
+    })
+    .catch((error) => {
+      console.error("슬라이드 데이터를 불러오지 못했습니다:", error);
+    });
+}
+
+window.addEventListener("DOMContentLoaded", () => {
+  fetchSlides();
+
+  document.getElementById("second-next").addEventListener("click", () => {
+    if (slides.length === 0) return;
+    currentIndex = (currentIndex + 1) % slides.length;
+    updateSlide(currentIndex);
+    resetAutoSlide(); // 리셋
+  });
+
+  document.getElementById("second-prev").addEventListener("click", () => {
+    if (slides.length === 0) return;
+    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+    updateSlide(currentIndex);
+    resetAutoSlide(); // 리셋
+  });
+});
+
+document.getElementById("bliClick").addEventListener("click", function () {
+  event.preventDefault(); // 링크 기본 동작 막기
+  window.location.href = "pages/menu.html";
+});
+
+document.querySelector(".mainmenu").addEventListener("change", function () {
+  const selectedValue = this.value;
+  if (selectedValue && selectedValue !== "#") {
+    // '#'은 이동 안 하게 처리
+    window.location.href = selectedValue + ".html";
   }
 });

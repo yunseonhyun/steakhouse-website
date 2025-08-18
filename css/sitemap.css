@@ -21,3 +21,61 @@
   transform: translate(-50%, -50%);
   z-index: 3;
 }
+
+label {
+  cursor: pointer;
+}
+
+.midSiteMap {
+  width: 100%;
+}
+
+.msmInner {
+  width: 61%;
+  margin: 0 auto;
+  display: block;
+  box-sizing: border-box;
+}
+
+.msmInner table {
+  width: 100%;
+  table-layout: fixed;
+}
+
+#사이트맵 {
+  margin-top: 70px;
+  font-size: 25px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+#aa,
+#aa1,
+#aa2 {
+  width: 150px;
+  background-color: #faf6f3;
+  font-size: 20px;
+  font-weight: 400;
+}
+#aa1,
+#bb1 {
+  border-top: 1px solid black;
+}
+
+#aa2,
+#bb2 {
+  border-bottom: 1px solid black;
+}
+
+td {
+  padding: 40px;
+  border-bottom: 1px solid rgb(202, 202, 202);
+}
+
+label {
+  margin-right: 15px;
+  color: #666666;
+}
+label:hover {
+  text-decoration: underline;
+}
