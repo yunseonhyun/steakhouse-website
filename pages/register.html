@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="../css/register.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <div class="통합회원가입">
@@ -14,16 +19,19 @@
         <button id="close">X</button>
       </div>
 
-      <div class="resisterInnerMiddle">
-        <img src="../images/icones/registerError.png" />
-        <p>
-          통합 회원 정책 시행에 따라<br /><strong>통합 회원 가입</strong>을
-          진행해주세요.
-        </p>
+      <div class="container">
+        <label id="아이디">
+          아이디 : <br />
+          <input type="text" id="username" name="username" required />
+        </label>
+        <label id="비밀번호">
+          비밀번호 :<br />
+          <input type="password" id="userpw" name="userpw" required />
+        </label>
+        <a href="register_result.html">회원가입</a>
       </div>
     </div>
-    <div class="본인인증">
-      <button id="본인인증하기">본인 인증하기</button>
-    </div>
+
+    <script src="../js/register.js"></script>
   </body>
 </html>

@@ -1,16 +1,18 @@
 $(function () {
   let 현재페이지 = 0;
-  const width = $(".first-slide").outerWidth();
+  const width = $(".first-slide").outerWidth(); // 초기값 고정 (디자인 기준 너비)
   const 이미지총갯수 = $(".first-slide").length;
   let firstAutoSlideTimeout;
 
   function moveSlide(index) {
-    $(".first-wrap").animate(
-      {
-        left: -width * index,
-      },
-      500
-    );
+    $(".first-wrap")
+      .stop(true, true)
+      .animate(
+        {
+          left: -width * index,
+        },
+        500
+      );
   }
 
   function resetFirstAutoSlide() {
@@ -68,19 +70,11 @@ $("#first-prev").hover(
 );
 
 document.getElementById("loginBtn").addEventListener("click", function () {
-  window.open(
-    "../steakhouse-website/pages/login.html",
-    "_blank",
-    "width=720,height=1000"
-  );
+  window.open("pages/login.html", "_blank", "width=720,height=1000");
 });
 
 document.getElementById("registerBtn").addEventListener("click", function () {
-  window.open(
-    "../steakhouse-website/pages/register.html",
-    "_blank",
-    "width=720,height=1000"
-  );
+  window.open("pages/register.html", "_blank", "width=720,height=1000");
 });
 document.getElementById("reserve").addEventListener("click", function () {
   window.open(
@@ -172,12 +166,4 @@ window.addEventListener("DOMContentLoaded", () => {
 document.getElementById("bliClick").addEventListener("click", function () {
   event.preventDefault(); // 링크 기본 동작 막기
   window.location.href = "pages/menu.html";
-});
-
-document.querySelector(".mainmenu").addEventListener("change", function () {
-  const selectedValue = this.value;
-  if (selectedValue && selectedValue !== "#") {
-    // '#'은 이동 안 하게 처리
-    window.location.href = selectedValue + ".html";
-  }
 });
