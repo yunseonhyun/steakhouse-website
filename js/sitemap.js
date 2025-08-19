@@ -29,21 +29,21 @@ document
   .getElementById("OUTBACKSTORY")
   .addEventListener("click", function (event) {
     event.preventDefault(); // 링크 기본 동작 막기
-    window.location.href = "brand.html?submenu=OUTBACK STORY";
+    window.location.href = "brand.html?submenu=OUTBACK%20STORY";
   });
 
 document
   .getElementById("BEEFSTORY")
   .addEventListener("click", function (event) {
     event.preventDefault(); // 링크 기본 동작 막기
-    window.location.href = "brand.html?submenu=BEEF STORY";
+    window.location.href = "brand.html?submenu=BEEF%20STORY";
   });
 
 document
   .getElementById("STEAKACADEMY")
   .addEventListener("click", function (event) {
     event.preventDefault(); // 링크 기본 동작 막기
-    window.location.href = "brand.html?submenu=STEAK ACADEMY";
+    window.location.href = "brand.html?submenu=STEAK%20ACADEMY";
   });
 
 document
@@ -89,4 +89,8 @@ document.querySelector(".mainmenu").addEventListener("change", function () {
 
 document.getElementById("homeBtn").addEventListener("click", function () {
   window.location.href = "../index.html";
+});
+
+document.getElementById("siteMapBtn").addEventListener("click", function () {
+  window.location.href = "../sitemap.html";
 });

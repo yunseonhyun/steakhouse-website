@@ -75,14 +75,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       }
 
-      // 초기 이미지 로딩
-      updateImages();
-
-      subMenu.addEventListener("change", function () {
-        updateImages();
-        updateBrandLocation();
-      });
-
       // 브랜드 위치 업데이트 함수
       function updateBrandLocation(forceDefault = false) {
         const mainText =
@@ -105,6 +97,28 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       }
 
+      // 🔥 [추가된 부분] URL 파라미터로 submenu 선택값 설정
+      const urlParams = new URLSearchParams(window.location.search);
+      const submenuParam = urlParams.get("submenu");
+
+      if (submenuParam) {
+        for (let i = 0; i < subMenu.options.length; i++) {
+          if (subMenu.options[i].value === submenuParam) {
+            subMenu.selectedIndex = i;
+            break;
+          }
+        }
+      }
+
+      // 초기 이미지 로딩
+      updateImages();
+      updateBrandLocation();
+
+      subMenu.addEventListener("change", function () {
+        updateImages();
+        updateBrandLocation();
+      });
+
       // mainMenu 클릭 시 다시 같은 메뉴 누르면 기본 경로로 초기화
       mainMenu.addEventListener("click", () => {
         const currentIndex = mainMenu.selectedIndex;
@@ -124,11 +138,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
       mainMenu.addEventListener("change", () => {
         updateBrandLocation();
-        // 선택된 값이 '#'이 아니면 페이지 이동 (예: brand.html, menu.html)
         const selectedValue = mainMenu.value;
         if (selectedValue && selectedValue !== "#") {
           if (selectedValue === "benefit" || selectedValue === "brand") {
-            // benefit 또는 brand 선택 시 기본 경로 유지, 페이지 이동 안함
             subMenu.selectedIndex = 0;
             updateBrandLocation(true);
             updateImages();
