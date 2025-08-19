@@ -104,3 +104,7 @@ document.querySelector(".mainmenu").addEventListener("change", function () {
     window.location.href = selectedValue + ".html";
   }
 });
+
+document.getElementById("homeBtn").addEventListener("click", function () {
+  window.location.href = "../index.html";
+});

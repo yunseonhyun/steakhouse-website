@@ -142,3 +142,7 @@ document.addEventListener("DOMContentLoaded", function () {
       console.error("JSON 불러오기 실패:", err);
     });
 });
+
+document.getElementById("homeBtn").addEventListener("click", function () {
+  window.location.href = "../index.html";
+});

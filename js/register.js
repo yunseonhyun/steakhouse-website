@@ -29,3 +29,8 @@ function signUp(e) {
 
   window.location.href = "login.html";
 }
+
+document.getElementById("close").addEventListener("click", function () {
+  event.preventDefault();
+  window.close();
+});

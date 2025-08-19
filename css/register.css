@@ -8,6 +8,20 @@
   height: 700px;
 }
 
+.resisterInnerTop p {
+  position: absolute;
+  left: 20%;
+  transform: translateX(-50%);
+  margin: 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#close {
+  position: absolute;
+  right: 20px;
+}
+
 .resisterInnerTop {
   display: flex;
   align-items: center;
