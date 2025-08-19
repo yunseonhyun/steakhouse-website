@@ -1,16 +1,11 @@
 $(function () {
   let 현재페이지 = 0;
-  const width = $(".first-slide").outerWidth();
   const 이미지총갯수 = $(".first-slide").length;
   let firstAutoSlideTimeout;
 
   function moveSlide(index) {
-    $(".first-wrap").animate(
-      {
-        left: -width * index,
-      },
-      500
-    );
+    const translateX = -25 * index; // 25%씩 이동
+    $(".first-wrap").css("transform", `translateX(${translateX}%)`);
   }
 
   function resetFirstAutoSlide() {
@@ -21,6 +16,11 @@ $(function () {
       resetFirstAutoSlide();
     }, 13000);
   }
+
+  // 윈도우 리사이즈 시 슬라이드 위치 재조정
+  $(window).resize(function () {
+    moveSlide(현재페이지);
+  });
 
   $("#first-next").click(function () {
     현재페이지 = (현재페이지 + 1) % 이미지총갯수;

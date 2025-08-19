@@ -253,9 +253,19 @@ function formatName(item) {
 }
 
 function formatPrice(item) {
-  if (item.price) {
+  // WINES 섹션의 특별한 가격 구조 처리
+  if (item.price && Array.isArray(item.price)) {
+    return item.price
+      .map((p) => `${p.type} ${p.value.toLocaleString()}원`)
+      .join(" / ");
+  }
+
+  // 기존 price 속성 처리
+  if (item.price && typeof item.price === "number") {
     return `${item.price.toLocaleString()}원`;
   }
+
+  // prices 배열 처리
   if (item.prices) {
     return item.prices
       .map(
@@ -267,9 +277,12 @@ function formatPrice(item) {
       )
       .join(" / ");
   }
+
+  // 100g당 가격 처리
   if (item.price_per_100g) {
     return `${item.price_per_100g.toLocaleString()}원 / 100g`;
   }
+
   return "가격 정보 없음";
 }
 

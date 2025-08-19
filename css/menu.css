@@ -13,6 +13,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  margin-top: 100px; /* 데스크탑 고정 헤더 높이만큼 여백 */
 }
 
 #firstMenu-image1 {
@@ -389,4 +390,345 @@ h2.category-appetizers-salads {
   font-size: 14px;
   padding: 1px 0 0 0;
   margin-left: 30px;
+}
+
+/* ================================== */
+/* 반응형 스타일 추가         */
+/* ================================== */
+
+@media (max-width: 1024px) {
+  #firstMenu-image1 {
+    height: 500px;
+  }
+
+  .firstMenu-img {
+    margin-top: 80px;
+  }
+
+  .midBar {
+    padding: 0 50px;
+    justify-content: center;
+  }
+
+  .bliInner {
+    width: 85%;
+  }
+
+  .setMenuBtn {
+    width: 80%;
+  }
+
+  .menu-items-container.category-beverages-alcohol.sub .item-name {
+    margin: 30px 20px;
+    font-size: 18px;
+  }
+
+  .menu-items-container.category-beverages-alcohol.sub .item-price {
+    font-size: 24px;
+    margin-right: 15px;
+  }
+
+  .menu-items-container.category-appetizers-salads .menu-item {
+    width: calc((100% - 24px) / 2);
+  }
+
+  h2,
+  h3 {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  .firstMenu-img {
+    display: none;
+  }
+
+  .midBar {
+    width: 90%;
+    max-width: 500px;
+    margin: 60px auto 0 auto;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    box-sizing: border-box;
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    padding: 20px;
+    gap: 10px;
+    background: linear-gradient(145deg, #ffffff, #f8f8f8);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  }
+
+  .midBar > #homeBtn,
+  .midBar > .mainmenu {
+    display: none !important;
+  }
+
+  .midBar > .submenu {
+    display: block !important;
+    width: 280px;
+    margin: 0;
+    font-size: 16px;
+    color: #333;
+    font-weight: 500;
+    padding: 12px 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+    text-align: center;
+    text-align-last: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23666%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 12px;
+    padding-right: 40px;
+  }
+
+  .midBar > .submenu:hover {
+    border-color: #6d3b01;
+    box-shadow: 0 4px 12px rgba(109, 59, 1, 0.2);
+  }
+
+  .midBar > .submenu:focus {
+    outline: none;
+    border-color: #6d3b01;
+    box-shadow: 0 0 0 3px rgba(109, 59, 1, 0.1);
+  }
+
+  #brand-location {
+    display: none;
+  }
+
+  .bliInner {
+    width: 90%;
+    margin-top: 40px;
+  }
+
+  #setMenu {
+    font-size: 24px;
+    padding: 20px 0;
+    text-align: center;
+  }
+
+  .setMenuBtn {
+    width: 80%;
+    margin-top: 30px;
+  }
+
+  .세트내용확인하기 {
+    width: 160px;
+    height: 42px;
+    font-size: 13px;
+    bottom: 12px;
+    right: 12px;
+    border-radius: 25px;
+  }
+
+  #bliEnName,
+  #bliKoName {
+    font-size: 14px;
+  }
+
+  .setContainer {
+    width: 90%;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .setContainer p {
+    text-align: center;
+    flex: 1;
+  }
+
+  .나누기선 {
+    width: 1px;
+    height: 30px;
+  }
+
+  .blackLabelNotice {
+    width: 95%;
+    height: auto;
+    padding: 20px;
+  }
+
+  .blackLabelNotice p {
+    margin-left: 0;
+    font-size: 13px;
+  }
+
+  #notice {
+    margin: 0 0 15px 0 !important;
+    font-size: 18px !important;
+    text-align: center !important;
+  }
+
+  .menu-items-container.category-beverages-alcohol.sub .menu-item {
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+    padding: 15px 10px;
+  }
+
+  .menu-items-container.category-beverages-alcohol.sub .item-name {
+    margin: 0 0 10px 0;
+    font-size: 16px;
+  }
+
+  .menu-items-container.category-beverages-alcohol.sub .item-price {
+    font-size: 20px;
+    margin-right: 0;
+    text-align: center;
+  }
+
+  .menu-items-container.category-appetizers-salads {
+    gap: 15px;
+  }
+
+  .menu-items-container.category-appetizers-salads .menu-item {
+    width: 100%;
+  }
+
+  .category-appetizers-salads .item-name {
+    font-size: 18px;
+    margin-top: 10px;
+  }
+
+  .category-appetizers-salads .item-price {
+    font-size: 18px !important;
+  }
+
+  .appetiNotice {
+    width: 95%;
+    height: auto;
+    padding: 15px;
+  }
+
+  .appetiNotice #name {
+    padding: 15px 0 0 15px;
+    font-size: 18px;
+  }
+
+  .appetiNotice #desc {
+    padding: 10px 0 0 15px;
+    font-size: 13px;
+  }
+
+  .blackLabelInfo img {
+    margin-top: 30px;
+    max-width: 90%;
+  }
+
+  .blackLabelInfo .item-price {
+    font-size: 24px;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .blackLabelInfo .price-part {
+    font-size: 16px;
+  }
+
+  h2,
+  h3 {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .separator {
+    display: none !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .midBar {
+    margin-top: 120px;
+    width: 95%;
+    border-radius: 10px;
+    padding: 18px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .midBar > .submenu {
+    width: 250px;
+    font-size: 14px;
+    padding: 10px 15px;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    background-position: right 12px center;
+    background-size: 10px;
+    padding-right: 35px;
+  }
+
+  .midBar > .submenu option {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+
+  .bliInner {
+    width: 95%;
+  }
+
+  .setMenuBtn {
+    margin-top: 20px;
+    width: 70%;
+  }
+
+  .blackLabelInfo img {
+    margin-top: 20px;
+    max-width: 85%;
+  }
+
+  .세트내용확인하기 {
+    width: 140px;
+    height: 35px;
+    font-size: 11px;
+    bottom: 8px;
+    right: 8px;
+  }
+
+  .setContainer {
+    width: 95%;
+  }
+
+  .setContainer p {
+    font-size: 13px;
+  }
+
+  .setContainer strong {
+    font-size: 16px;
+  }
+
+  .나누기선 {
+    height: 25px;
+  }
+
+  .menu-items-container.category-beverages-alcohol.sub .item-name {
+    font-size: 14px;
+  }
+
+  .menu-items-container.category-beverages-alcohol.sub .item-price {
+    font-size: 18px;
+  }
+
+  .category-appetizers-salads .item-name {
+    font-size: 16px;
+  }
+
+  .category-appetizers-salads .item-price {
+    font-size: 16px !important;
+  }
+
+  h2,
+  h3 {
+    font-size: 20px;
+  }
 }
