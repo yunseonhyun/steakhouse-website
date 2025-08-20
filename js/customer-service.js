@@ -235,3 +235,7 @@ mainmenu.addEventListener("click", function () {
     brandLocation.textContent = "Home > 고객의 소리 > 고객의 소리";
   }
 });
+
+document.getElementById("homeBtn").addEventListener("click", function () {
+  window.location.href = "../index.html";
+});

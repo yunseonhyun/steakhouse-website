@@ -173,11 +173,3 @@ document.getElementById("bliClick").addEventListener("click", function () {
   event.preventDefault(); // 링크 기본 동작 막기
   window.location.href = "pages/menu.html";
 });
-
-document.querySelector(".mainmenu").addEventListener("change", function () {
-  const selectedValue = this.value;
-  if (selectedValue && selectedValue !== "#") {
-    // '#'은 이동 안 하게 처리
-    window.location.href = selectedValue + ".html";
-  }
-});

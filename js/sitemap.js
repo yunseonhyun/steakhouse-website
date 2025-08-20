@@ -91,6 +91,10 @@ document.getElementById("homeBtn").addEventListener("click", function () {
   window.location.href = "../index.html";
 });
 
-document.getElementById("siteMapBtn").addEventListener("click", function () {
-  window.location.href = "../sitemap.html";
+document.getElementById("sitemapBtn").addEventListener("click", function () {
+  window.location.href = "sitemap.html";
+});
+
+document.getElementById("homeBtn").addEventListener("click", function () {
+  window.location.href = "../index.html";
 });

@@ -537,6 +537,9 @@ a {
   .bib-left span:nth-child(3) {
     margin-right: 0;
   }
+  #img1 {
+    margin-top: -8px;
+  }
 }
 
 @media screen and (max-width: 480px) {

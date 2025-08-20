@@ -645,6 +645,7 @@ h2.category-appetizers-salads {
   .separator {
     display: none !important;
   }
+
 }
 
 @media (max-width: 480px) {
