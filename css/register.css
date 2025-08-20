@@ -59,7 +59,11 @@
   display: block;
   text-decoration: none;
   color: white;
-  background-color: rgb(165, 45, 45);
+  background-color: rgb(155, 155, 155);
+}
+
+.container a:hover{
+  background-color: rgb(112, 112, 112);
 }
 
 button,
