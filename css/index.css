@@ -427,9 +427,4 @@ button {
   }
 }
 
-.left-con > a:hover {
-  text-decoration: underline;
-  text-decoration-color: rgba(201, 30, 30, 0.795);
-  text-decoration-thickness: 3px;
-  text-underline-offset: 6px;  
-}
+
