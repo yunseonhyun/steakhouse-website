@@ -1,9 +1,10 @@
 * {
   margin: 0;
   padding: 0;
+
+  background-color: #f5f5f5;
 }
 .통합회원가입 {
-  background-color: #f5f5f5;
   height: 700px;
 }
 
@@ -16,16 +17,6 @@
   position: relative;
 }
 
-#back,
-#close {
-  background: none;
-  border: none;
-  font-size: 20px;
-  cursor: pointer;
-  width: 50px;
-  text-align: center;
-}
-
 .resisterInnerTop p {
   flex-grow: 1;
   text-align: left;
@@ -35,30 +26,43 @@
   margin-left: 20px;
 }
 
-.resisterInnerMiddle {
+.container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  height: 200px;
-  padding: 20px;
-  margin-top: 300px;
+  flex-direction: column; /* 세로로 나열 */
+  align-items: center; /* 가로 중앙 정렬 */
+  margin-top: 100px;
 }
 
-#본인인증하기 {
-  position: fixed;
-  margin-bottom: 5px;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 90%;
-  height: 50px;
-  color: white;
-  background-color: black;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 3;
+.container label {
+  margin-bottom: 20px;
+  text-align: left;
+  margin-left: -200px;
+}
+
+.container input {
+  width: 200px;
+  padding: 8px;
+  margin-top: 5px;
+}
+
+#close {
+  border: none;
+  font-size: 20px;
+}
+.container a {
+  margin-top: 250px;
+  margin-left: -50px;
+  width: 100px;
+  height: 30px;
   border-radius: 4px;
+  text-align: center;
+  display: block;
+  text-decoration: none;
+  color: white;
+  background-color: rgb(165, 45, 45);
+}
+
+button,
+a {
+  cursor: pointer;
 }
