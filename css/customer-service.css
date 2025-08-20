@@ -155,7 +155,6 @@ input[type="radio"] {
 .btns {
   text-align: center;
   margin-top: 50px;
-  
 }
 
 #문의버튼 {
@@ -165,7 +164,6 @@ input[type="radio"] {
   background-color: #cb0000;
   border: none;
   margin-right: 10px;
-  cursor: pointer;
 }
 
 #취소버튼 {
@@ -174,5 +172,87 @@ input[type="radio"] {
   border: 1px solid black;
   background-color: white;
   margin-left: 10px;
-  cursor: pointer;
+}
+/* --- 반응형 스타일 추가 (기존 CSS 코드 아래에 붙여넣으세요) --- */
+
+/* 태블릿 사이즈 기준 (1024px 이하) */
+@media (max-width: 1024px) {
+  .csInner {
+    width: 80%; /* 컨텐츠 영역을 조금 더 넓게 조정 */
+  }
+
+  .문의하기InnerTop {
+    width: 70%; /* 버튼을 감싸는 영역 너비 조정 */
+  }
+
+  #firstCustomer-image1 {
+    height: 500px; /* 이미지 높이 줄이기 */
+  }
+
+  #textBenefit {
+    font-size: 40px; /* 텍스트 크기 줄이기 */
+  }
+}
+
+/* 모바일 사이즈 기준 (768px 이하) */
+@media (max-width: 768px) {
+  /* 1. CUSTOMER SERVICE 배너 이미지 숨기고 배경색으로 대체 */
+  .firstCustomer-img {
+    background-color: #2c2a29; /* 아웃백 브랜드의 어두운 계열 색상으로 대체 */
+    height: 200px; /* 모바일에서 배너 높이 대폭 축소 */
+    display: flex; /* 텍스트 중앙 정렬을 위해 flex 사용 */
+    justify-content: center;
+    align-items: center;
+  }
+
+  #firstCustomer-image1 {
+    display: none; /* 기존 이미지 숨기기 */
+  }
+
+  #textBenefit {
+    position: static; /* absolute 포지셔닝 해제 */
+    transform: none; /* transform 효과 해제 */
+    font-size: 28px; /* 모바일에 맞는 폰트 크기 */
+    text-decoration: none; /* 밑줄 제거 (선택 사항) */
+  }
+
+  /* 2. 컨텐츠 영역 및 버튼 크기 반응형으로 수정 */
+  .csInner {
+    width: 90%; /* 모바일에서 컨텐츠 영역을 화면에 거의 꽉 차게 설정 */
+    margin-top: 40px;
+  }
+
+  .customerSound strong {
+    font-size: 24px; /* 모바일에서 제목 폰트 크기 조정 */
+  }
+
+  #고객의소리 {
+    font-size: 13px;
+    line-height: 1.5; /* 줄 간격 추가 */
+  }
+
+  .문의하기InnerTop {
+    width: 100%; /* 버튼 컨테이너를 꽉 채움 */
+    padding-bottom: 20px;
+  }
+
+  #notice {
+    font-size: 22px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
+
+  /* 로그인/비회원 문의 버튼 반응형 처리 */
+  #로그인하기,
+  #비회원문의하기 {
+    width: 100%; /* 버튼 너비를 100%로 설정하여 컨테이너에 맞춤 */
+    max-width: 320px; /* 버튼이 너무 커지지 않도록 최대 너비 설정 */
+  }
+
+  .문의하기InnerBottom {
+    padding: 0 10px; /* 좌우 여백 추가 */
+    margin-top: 20px;
+    margin-bottom: 30px;
+    font-size: 13px;
+  }
 }

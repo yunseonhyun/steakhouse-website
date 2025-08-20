@@ -136,11 +136,12 @@ document.addEventListener("DOMContentLoaded", function () {
         previousMainIndex = currentIndex;
       });
 
+      // ✅ 이 부분만 수정
       mainMenu.addEventListener("change", () => {
         updateBrandLocation();
         const selectedValue = mainMenu.value;
         if (selectedValue && selectedValue !== "#") {
-          if (selectedValue === "benefit" || selectedValue === "brand") {
+          if (selectedValue === "brand") {
             subMenu.selectedIndex = 0;
             updateBrandLocation(true);
             updateImages();

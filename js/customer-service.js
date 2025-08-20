@@ -93,7 +93,7 @@ document
               <td id="a2">
                 <input type="text" id="prevEmail" /> @
                 <input type="text" id="nextEmail" placeholder="직접입력" />
-                <select id="이메일뒷부분">
+                <select class="이메일뒷부분">
                   <option class="email" selected>직접입력</option>
                   <option class="email">outback.co.kr</option>
                   <option class="email">empal.com</option>
@@ -172,20 +172,6 @@ document
       </div>
     </div>`;
 
-    const emailSelect = document.getElementById("이메일뒷부분");
-    const nextEmailInput = document.getElementById("nextEmail");
-
-    emailSelect.addEventListener("change", function () {
-      const selectedValue = this.value;
-      if (selectedValue === "직접입력") {
-        nextEmailInput.value = "";
-        nextEmailInput.readOnly = false;
-        nextEmailInput.placeholder = "직접입력";
-      } else {
-        nextEmailInput.value = selectedValue;
-        nextEmailInput.readOnly = true; // 선택한 경우 직접 입력 못 하게
-      }
-    });
     // 문의하기 버튼 / 취소 버튼 추가
     document.getElementById("비회원btn").innerHTML = `
     <div class="btns">
@@ -248,8 +234,4 @@ mainmenu.addEventListener("click", function () {
     if (submenu) submenu.selectedIndex = 0;
     brandLocation.textContent = "Home > 고객의 소리 > 고객의 소리";
   }
-});
-
-document.getElementById("homeBtn").addEventListener("click", function () {
-  window.location.href = "../index.html";
 });
