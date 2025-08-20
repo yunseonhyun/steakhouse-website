@@ -29,22 +29,36 @@ document.getElementById("savePoint").addEventListener("click", function () {
   }
 });
 
+// 🔥 현재 선택된 index 저장
+let previousMainIndex = document.querySelector(".mainmenu").selectedIndex;
+
+// mainmenu 클릭 시 같은 메뉴 재선택하면 submenu 초기화
+document.querySelector(".mainmenu").addEventListener("click", function () {
+  const currentIndex = this.selectedIndex;
+  const currentText = this.options[currentIndex].text.trim();
+
+  if (currentText === "MENU" && currentIndex === previousMainIndex) {
+    const submenu = document.querySelector(".submenu");
+    submenu.value = "BLACK LABEL CHEF EDITION";
+    submenu.dispatchEvent(new Event("change")); // 👈 변경 이벤트 트리거
+  }
+
+  previousMainIndex = currentIndex;
+});
+
 // mainmenu 변경 시 페이지 이동 및 brand-location 텍스트 변경
 document.querySelector(".mainmenu").addEventListener("change", function () {
   const selectedValue = this.value;
   const selectedText = this.options[this.selectedIndex].text.trim();
 
-  // 페이지 이동 (value가 "#"일 경우 이동하지 않음)
   if (selectedValue && selectedValue !== "#") {
     window.location.href = selectedValue + ".html";
   }
 
-  // brand-location 텍스트 업데이트
   document.getElementById(
     "brand-location"
   ).textContent = `Home > ${selectedText} > ${selectedText}`;
 
-  // submenu 기본값 초기화
   const submenu = document.querySelector(".submenu");
   if (submenu) {
     submenu.selectedIndex = 0;
@@ -62,10 +76,10 @@ document.querySelector(".submenu").addEventListener("change", function () {
   ).textContent = `Home > ${mainText} > ${subText}`;
 });
 
+// (중복 제거 가능하지만, 유지 요청대로 그대로 둠)
 document.querySelector(".mainmenu").addEventListener("change", function () {
   const selectedValue = this.value;
   if (selectedValue && selectedValue !== "#") {
-    // '#'은 이동 안 하게 처리
     window.location.href = selectedValue + ".html";
   }
 });
