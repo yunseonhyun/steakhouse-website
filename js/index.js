@@ -68,19 +68,11 @@ $("#first-prev").hover(
 );
 
 document.getElementById("loginBtn").addEventListener("click", function () {
-  window.open(
-    "../steakhouse-website/pages/login.html",
-    "_blank",
-    "width=720,height=1000"
-  );
+  window.open("pages/login.html", "_blank", "width=720,height=1000");
 });
 
 document.getElementById("registerBtn").addEventListener("click", function () {
-  window.open(
-    "../steakhouse-website/pages/register.html",
-    "_blank",
-    "width=720,height=1000"
-  );
+  window.open("pages/register.html", "_blank", "width=720,height=1000");
 });
 document.getElementById("reserve").addEventListener("click", function () {
   window.open(
